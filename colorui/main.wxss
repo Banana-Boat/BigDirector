@@ -1238,21 +1238,21 @@ button.icon.lg {
 }
 
 .cu-list>.cu-item {
-	transition: all .6s ease-in-out 0s;
+	transition: all .5s ease-in-out 0s;
 	transform: translateX(0rpx)
 }
 
 .cu-list>.cu-item.move-cur {
-	transform: translateX(-260rpx)
+	transform: translateX(-100rpx)
 }
 
 .cu-list>.cu-item .move {
 	position: absolute;
 	right: 0;
 	display: flex;
-	width: 260rpx;
+	width: 25%;
 	height: 100%;
-	transform: translateX(100%)
+	transform: translateX(110%)
 }
 
 .cu-list>.cu-item .move view {

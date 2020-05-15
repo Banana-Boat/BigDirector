@@ -1,1 +1,77 @@
-/* pages/partProcedure/partProcedure.wxss */
+Page{
+    background-color: #fff;
+}
+.main{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #fff;
+}
+/* 标题栏 */
+.title-box{
+    transition: all .4s ease-in-out 0s;
+}
+.title-box-change{
+    transform: translateY();
+}
+/* 流程栏 */
+.proc-box{
+    padding: 15rpx;
+    font-size: 35rpx;
+    transition: all .4s ease-in-out 0s;
+    overflow: unset;
+}
+.proc-oper-box{
+    width: 75%;
+    transform: translateX();
+}
+.proc-show-box{
+    width: 25%;
+    transform: translateX();
+}
+.del-btn{
+    zoom: 1.7;
+    margin-top: 6rpx;
+}
+
+/* 操作栏+演示栏 */
+.oper-show-box{
+    z-index: 100;
+    background-color: #fff;
+}
+/* 操作栏 */
+.oper-box{
+    width: 25%;
+    position: fixed;
+    background-color: #fff;
+    border-left: #90c0f0 5rpx solid;
+    padding-top: 15px;
+}
+#personBtn, #propBtn, #stageBtn{
+    color: white;
+    font-size: 30rpx;
+    width: 100%;
+    letter-spacing: 1.5rpx;
+}
+#showBtn{
+    zoom: 0.25;
+    width: 100%;
+}
+#staffBtn{
+    position: absolute;
+    bottom: 3vh;
+    width: 150rpx;
+    margin: 0 10%;
+}
+/* 演示栏 */
+.show-box{
+    width: 75%;
+    position: fixed;
+    background-color: rgb(71, 219, 150);
+}
+.tooper-btn{
+    zoom: 1.9;
+    right: 30rpx;
+    top: 80rpx;
+    position: fixed;
+
+}

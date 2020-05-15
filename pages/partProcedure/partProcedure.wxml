@@ -1,2 +1,43 @@
-<!--pages/partProcedure/partProcedure.wxml-->
-<text>pages/partProcedure/partProcedure.wxml</text>
+<view class="title-box {{isShowBox?'title-box-change':''}}" style="height: {{isShowBox?'0':customBarHeight}}px;">
+    <view style="display: {{isShowBox?'none':'flex'}};">
+        <cu-custom  bgColor="bg-gradual-blue" isBack="{{true}}">
+            <view slot="backText">返回</view>
+            <view slot="content">{{partName}}</view>
+        </cu-custom>
+    </view>
+</view>
+
+
+<view class="bg-white main">
+
+    <view class="proc-box {{isShowBox?'proc-show-box':'proc-oper-box'}}">
+        <view class="cu-list">
+            <view wx:for="{{procList}}" wx:key="index" class="cu-item {{animationHasShow?'':'animation-slide-bottom'}} {{modalName=='move-box-'+ index?'move-cur':''}}" style="animation-delay: {{(index+1)*0.15}}s;" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+                <view class="move" style="display: {{isShowBox?'none':'flex'}};">
+                    <text class="del-btn cuIcon-deletefill text-red"></text>
+                </view>
+                <view wx:if="{{item.type=='person'}}" class="proc-item bg-orange light radius padding-sm margin-xs">{{index+1}} {{item.name}}</view>
+                <view wx:if="{{item.type=='prop'}}" class="proc-item bg-cyan light radius margin-xs padding-sm">{{index+1}} {{item.name}}</view>
+                <view wx:if="{{item.type=='stage'}}" class="proc-item bg-blue light radius margin-xs padding-sm">{{index+1}} {{item.name}}</view>
+            </view>
+        </view>        
+    </view>
+
+    <view class="oper-show-box ">
+        <view class="oper-box" style="height: {{windowHeight-customBarHeight}}px;display: {{isShowBox?'none':'block'}};">
+            <image src="/images/video.svg" id="showBtn" bindtap="displayShowBox"></image>
+            <view class="margin-xs padding-sm"><button class="cu-btn bg-orange shadow" id="personBtn">人员</button></view>
+            <view class="margin-xs padding-sm"><button class="cu-btn bg-cyan shadow" id="propBtn">道具</button></view>
+            <view class="margin-xs padding-sm"><button class="cu-btn bg-blue shadow" id="stageBtn">舞台</button></view>
+            <button class="cu-btn lines-grey bordersize round shadow" id="staffBtn">负责人</button>
+        </view>
+
+        <view class="show-box" style="height: {{windowHeight}}px;display: {{isShowBox?'block':'none'}};">
+            <view >
+                <text class="tooper-btn cuIcon-fold text-black" bindtap="backToOperBox"></text>
+            </view>
+        </view>
+    </view>
+
+</view>
+

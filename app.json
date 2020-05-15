@@ -1,39 +1,20 @@
 {
     "pages": [
-        "pages/index/index",
-        "pages/overallFlow/overallFlow",
-        "pages/overallProcedure/overallProcedure",
         "pages/partProcedure/partProcedure",
-        "pages/overallShow/overallShow",
-        "pages/partShow/partShow",
+        "pages/index/index",
+        "pages/overallProcedure/overallProcedure",
         "pages/mine/mine",
         "pages/staffManagement/staffManagement"
     ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "我是大导演",
-        "navigationBarTextStyle": "black"
-    },
     "style": "v2",
     "sitemapLocation": "sitemap.json",
-    "tabBar": {
-        "color": "#a9b7b7",
-        "selectedColor": "#11cd6e",
-        "borderStyle": "black",
-        "list": [
-            {
-                "selectedIconPath": "/images/basics_selected.png",
-                "iconPath": "/images/basics.png",
-                "pagePath": "pages/index/index",
-                "text": "晚会项目"  
-            },
-            {
-                "selectedIconPath": "/images/about_selected.png",
-                "iconPath": "/images/about.png",
-                "pagePath": "pages/mine/mine",
-                "text": "我的"  
-            }
-        ]
+    "window": {
+        "navigationBarBackgroundColor": "#39b54a",
+        "navigationBarTitleText": "我是大导演",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
     }
 }
