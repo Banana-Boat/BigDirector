@@ -6,7 +6,6 @@
         "pages/mine/mine",
         "pages/staffManagement/staffManagement"
     ],
-    "style": "v2",
     "sitemapLocation": "sitemap.json",
     "window": {
         "navigationBarBackgroundColor": "#39b54a",

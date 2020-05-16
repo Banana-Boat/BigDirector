@@ -17,6 +17,7 @@ App({
                 this.globalData.CustomBar = e.statusBarHeight + 50;
             }
             this.globalData.windowHeight = wx.getSystemInfoSync().windowHeight;
+            this.globalData.windowWidth = wx.getSystemInfoSync().windowWidth;
         }
     })
     // 登录
