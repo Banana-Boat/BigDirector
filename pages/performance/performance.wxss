@@ -1,1 +1,26 @@
-/* pages/performance/performance.wxss */
+.nav-title{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.location-bar{
+    min-height: 70rpx;
+}
+.location-text{
+    font-size: 1rem;
+}
+.main-content{
+    background-color: #f7f7f7;
+}
+
+swiper-item{
+    padding: 20rpx 0 !important;
+}
+
+.perf-name{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.perf-intro{
+    word-wrap: break-word;
+    word-break: normal;
+}

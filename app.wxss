@@ -3,3 +3,7 @@
 @import "colorui/icon.wxss";
 @import "colorui/animation.wxss";
 
+page{
+    font-family: Arial;
+}
+

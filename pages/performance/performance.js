@@ -1,18 +1,34 @@
-// pages/performance/performance.js
+const app = getApp()
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        cardCur: 0,
+        swiperList: [{
+            id: 0,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 1,
+            url: '/static/img/poster2.jpg',
+          }, {
+            id: 2,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 3,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 4,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 5,
+            url: '/static/img/poster1.jpg'
+          }],
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
     onLoad: function (options) {
 
+    },
+    cardSwiper(e) {
+        this.setData({
+          cardCur: e.detail.current
+        })
     },
 
     /**

@@ -32,9 +32,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    Custom: app.globalData.Custom
+    StatusBar: app.globalData.statusBar,
+    CustomBar: app.globalData.customBar,
+    Custom: app.globalData.custom
   },
   /**
    * 组件的方法列表

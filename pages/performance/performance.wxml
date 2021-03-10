@@ -1,2 +1,53 @@
-<!--pages/performance/performance.wxml-->
-<text>pages/performance/performance.wxml</text>
+<nav-bar bgColor="bg-black">
+    <view slot="content">
+        <view class="nav-title text-white">我是大导演</view>
+    </view>
+</nav-bar>
+<view class="location-bar cu-bar justify-start shadow-warp margin-bottom-sm bg-white text-xl">
+    <text class="cuIcon-location text-black margin-lr-sm">
+        <text class="location-text margin-left-sm">杭州市 杭州电子科技大学</text>
+    </text>
+</view>
+<scroll-view class="main-content padding-0 shadow">
+    <view class="bg-white padding-lr-xs padding-bottom-sm">
+        <swiper class="card-swiper" bindchange="cardSwiper">
+            <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+                <view class="swiper-item">
+                    <image src="{{item.url}}" mode="aspectFill"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="flex justify-center flex-direction align-center margin-bottom-lg">
+            <text class="perf-name">20不惑</text>
+            <view class="text-gray">
+                <text>130分钟</text> | <text>迎新晚会</text>
+            </view>
+        </view>
+        <view class="flex justify-start margin-left-sm text-orange text-lg">
+            <text class="cuIcon-titles">今天03月10日</text>
+        </view>
+    </view>
+    <view class="bg-white margin-tb-sm padding-sm">
+        <view class="flex padding-tb-sm justify-around solid-bottom">
+            <view class="flex flex-direction justify-center">
+                <text class="bold text-lg">开始18:00</text>
+                <text class="text-gray">结束 20:40</text>
+            </view>
+            <view class="flex flex-direction justify-center" style="width: 50%;">
+                <text class="bold text-lg text-cut">通信·经济学院主题迎新晚会</text>
+                <text class="text-gray">学生活动中心剧院</text>
+            </view>
+            <view class="flex align-center justify-center">
+                <button class="cu-btn round line-orange">抢票</button>
+            </view>
+        </view>
+        <view class="flex flex-direction padding-lr-sm padding-tb-sm">
+            <view class="self-end text-gray">
+                更多<text class="cuIcon-right"></text>
+            </view>
+            <text class="perf-intro padding-lr-sm">
+                sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            </text>
+        </view>
+    </view>
+</scroll-view>
