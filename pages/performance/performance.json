@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "tarbar":"/components/tarbar/tarbar",
+    "alert-remind":"/components/alert/remind/remind"
+  }
 }

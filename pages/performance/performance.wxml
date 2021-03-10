@@ -1,2 +1,5 @@
 <!--pages/performance/performance.wxml-->
-<text>pages/performance/performance.wxml</text>
+<text>performance.wxml</text>
+<tarbar cursor="tarbar2" tarbarSetting="{{tarbarSetting}}" tarbarList="{{tarbarList}}"></tarbar>
+
+<alert-remind></alert-remind>

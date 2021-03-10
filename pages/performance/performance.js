@@ -5,14 +5,41 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        tarbarSetting: {
+            textColor:'black',
+            tarbarColor:'white'
+          },
+          tarbarList: [{
+              icon: '/static/img/project.png',
+              iconSelected:'/static/img/project_selected.png',
+              router: '/pages/mine/mine',
+              tag: 'tarbar1'
+            },
+            {
+              icon: '/static/img/project.png',
+              iconSelected:'/static/img/project_selected.png',
+              router: '/pages/mine/project/project',
+              tag: 'tarbar2'
+            },
+            {
+              icon: '/static/img/project.png',
+              iconSelected:'/static/img/project_selected.png',
+              router: '/pages/mine/userInfoEdit/userInfoEdit',
+              tag: 'tarbar3'
+            },
+            {
+              icon: '/static/img/project.png',
+              iconSelected:'/static/img/project_selected.png',
+              router: '/pages/mine/userTicket/userTicket',
+              tag: 'tarbar4'
+            }
+          ]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
     },
 
     /**

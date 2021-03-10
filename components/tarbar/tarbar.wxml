@@ -1,0 +1,10 @@
+<!--components/tarbar/tarbar.wxml-->
+<view class="cu-bar tabbar tarbar bg-{{tarbarSetting.tarbarColor}}">
+	<view class="action" wx:for="{{tarbarList}}" wx:key="index" data-router="{{item.router}}" bind:tap="RouterSwitch">
+		<view class="cuIcon-cu-image">
+			<image src="{{cursor===item.tag?item.iconSelected:item.icon}}" />
+		</view>
+		<view class="text-{{tarbarSetting.textColor}}">{{item.tag}}</view>
+	</view>
+</view>
+
