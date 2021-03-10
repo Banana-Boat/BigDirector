@@ -796,15 +796,15 @@ button.icon.lg {
  ==================== */
 
 .cu-tag {
-	font-size: 26rpx;
+	font-size: 24rpx;
 	vertical-align: middle;
 	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	box-sizing: border-box;
-	padding: 0rpx 18rpx;
-	height: 52rpx;
+	padding: 0rpx 16rpx;
+	height: 48rpx;
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 	white-space: nowrap;
 }
@@ -1238,21 +1238,21 @@ button.icon.lg {
 }
 
 .cu-list>.cu-item {
-	transition: all .4s ease-in-out 0s;
+	transition: all .6s ease-in-out 0s;
 	transform: translateX(0rpx)
 }
 
 .cu-list>.cu-item.move-cur {
-	transform: translateX(-140rpx)
+	transform: translateX(-260rpx)
 }
 
 .cu-list>.cu-item .move {
 	position: absolute;
 	right: 0;
 	display: flex;
-	width: 20%;
+	width: 260rpx;
 	height: 100%;
-	transform: translateX(110%)
+	transform: translateX(100%)
 }
 
 .cu-list>.cu-item .move view {
@@ -2617,14 +2617,14 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .card-swiper {
-	/* height: 420rpx !important; */
+	height: 420rpx !important;
 }
 
 .card-swiper swiper-item {
-	/* width: 610rpx !important;
-	left: 70rpx; */
+	width: 610rpx !important;
+	left: 70rpx;
 	box-sizing: border-box;
-	/* padding: 40rpx 0rpx 70rpx; */
+	padding: 40rpx 0rpx 70rpx;
 	overflow: initial;
 }
 
