@@ -1,0 +1,26 @@
+{
+    "pages": [
+        "pages/performance/performance",
+        "pages/performance/ticketOrder/ticketOrder",
+        "pages/mine/mine",
+        "pages/mine/project/project",
+        "pages/mine/project/baseInfo/baseInfo",
+        "pages/mine/project/playscript/playscript",
+        "pages/mine/project/staff/staff",
+        "pages/mine/project/ticket/ticket",
+        "pages/mine/userInfoEdit/userInfoEdit",
+        "pages/mine/userProject/userProject",
+        "pages/mine/userTicket/userTicket",
+        "pages/mine/userTicket/ticketDetail/ticketDetail"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#39b54a",
+        "navigationBarTitleText": "我是大大大导演",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    }
+}
