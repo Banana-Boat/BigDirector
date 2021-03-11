@@ -3,75 +3,6 @@ const app = getApp()
 
 Page({
     data: {
-<<<<<<< HEAD
-// <<<<<<< HEAD
-//         tarbarSetting: {
-//             textColor:'black',
-//             tarbarColor:'white'
-//           },
-//           tarbarList: [{
-//               icon: '/static/img/project.png',
-//               iconSelected:'/static/img/project_selected.png',
-//               router: '/pages/mine/mine',
-//               tag: 'tarbar1'
-//             },
-//             {
-//               icon: '/static/img/project.png',
-//               iconSelected:'/static/img/project_selected.png',
-//               router: '/pages/mine/project/project',
-//               tag: 'tarbar2'
-//             },
-//             {
-//               icon: '/static/img/project.png',
-//               iconSelected:'/static/img/project_selected.png',
-//               router: '/pages/mine/userInfoEdit/userInfoEdit',
-//               tag: 'tarbar3'
-//             },
-//             {
-//               icon: '/static/img/project.png',
-//               iconSelected:'/static/img/project_selected.png',
-//               router: '/pages/mine/userTicket/userTicket',
-//               tag: 'tarbar4'
-//             }
-//           ],
-//           modalSetting:{
-//             showModal:false
-//           },
-//           alertType:'confirm',
-//           alertSetting:{
-//             showCancelIcon:false,
-//           },
-//           titleBgColor:'white',
-//           loading:{
-//             showLoading:true,
-//             imgPath:'/static/img/head.png',
-//             loadingText:'加载中...'
-//           }
-// =======
-        cardCur: 0,
-        swiperList: [{
-            id: 0,
-            url: '/static/img/poster1.jpg'
-          }, {
-            id: 1,
-            url: '/static/img/poster2.jpg',
-          }, {
-            id: 2,
-            url: '/static/img/poster1.jpg'
-          }, {
-            id: 3,
-            url: '/static/img/poster1.jpg'
-          }, {
-            id: 4,
-            url: '/static/img/poster1.jpg'
-          }, {
-            id: 5,
-            url: '/static/img/poster1.jpg'
-          }],
-// >>>>>>> fd82bd9d913837a1cf9ea14dc454664332fa10e1
-    },
-    onLoad: function (options) {
-=======
       tarbarList1: app.globalData.tarbarList1,
       swiperLeft: app.globalData.windowWidth / 2 - util.RpxToPx(103 + 10, app.globalData.windowWidth),
       perfIndex: 0,
@@ -142,7 +73,6 @@ Page({
     //  wx.hideTabBar({
     //    animation: true,
     //  })
->>>>>>> 2588bd0fb411c2910b6bb04ae7f720b32e3bfd03
     },
     ChangeSwiperItem(e) {
       this.setData({

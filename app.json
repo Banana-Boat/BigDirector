@@ -18,11 +18,6 @@
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
         "cu-custom": "/colorui/components/cu-custom",
-<<<<<<< HEAD
-        "bd-tarbar":"/components/tarbar/tarbar",
-        "bd-alert":"/components/alert/alert",
-        "bd-loading":"/components/loading/loading"
-=======
         "bd-tarbar": "/components/tarbar/tarbar",
         "bd-alert": "/components/alert/alert",
         "bd-loading": "/components/loading/loading"
@@ -45,6 +40,5 @@
                 "text": "我的"
             }
         ]
->>>>>>> 2588bd0fb411c2910b6bb04ae7f720b32e3bfd03
     }
 }
