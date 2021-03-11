@@ -1,4 +1,4 @@
-// pages/mine/project/ticket/ticket.js
+// pages/mine/userProject/project/project.js
 Page({
 
     /**

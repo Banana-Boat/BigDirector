@@ -3,15 +3,11 @@
         "pages/performance/performance",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/mine",
-        "pages/mine/project/project",
-        "pages/mine/project/baseInfo/baseInfo",
-        "pages/mine/project/playscript/playscript",
-        "pages/mine/project/staff/staff",
-        "pages/mine/project/ticket/ticket",
         "pages/mine/userInfoEdit/userInfoEdit",
         "pages/mine/userProject/userProject",
         "pages/mine/userTicket/userTicket",
-        "pages/mine/userTicket/ticketDetail/ticketDetail"
+        "pages/mine/userTicket/ticketDetail/ticketDetail",
+        "pages/mine/userProject/project/project"
     ],
     "window": {
         "navigationBarBackgroundColor": "#39b54a",
@@ -21,6 +17,28 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "/colorui/components/cu-custom",
+        "bd-tarbar": "/components/tarbar/tarbar",
+        "bd-alert": "/components/alert/alert",
+        "bd-loading": "/components/loading/loading"
+    },
+    "tabBar": {
+        "color": "#bfbfbf",
+        "selectedColor": "#3387b5",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "/static/img/project_selected.png",
+                "iconPath": "/static/img/project.png",
+                "pagePath": "pages/performance/performance",
+                "text": "演出"
+            },
+            {
+                "selectedIconPath": "/static/img/mine_selected.png",
+                "iconPath": "/static/img/mine.png",
+                "pagePath": "pages/mine/mine",
+                "text": "我的"
+            }
+        ]
     }
 }

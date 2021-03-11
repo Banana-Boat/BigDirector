@@ -14,6 +14,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+// 像素单位px与rpx转换
+const RpxToPx = (rpx, windowWidth) => {
+  return rpx / 750 * windowWidth
+}
+
+const PxToRpx = (px, windowWidth) => {
+  return px * 750 / windowWidth
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  RpxToPx: RpxToPx,
+  PxToRpx: PxToRpx
 }

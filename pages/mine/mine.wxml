@@ -1,2 +1,4 @@
 <!--pages/mine/mine.wxml-->
 <text>pages/mine/mine.wxml</text>
+<!-- <bd-tarbar cursor="我的" textColorSelected="blue" tarbarList="{{tarbarList1}}"></bd-tarbar> -->
+
