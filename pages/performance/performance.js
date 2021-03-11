@@ -33,7 +33,15 @@ Page({
               router: '/pages/mine/userTicket/userTicket',
               tag: 'tarbar4'
             }
-          ]
+          ],
+          modalSetting:{
+            showModal:false
+          },
+          alertType:'confirm',
+          alertSetting:{
+            showCancelIcon:false,
+          },
+          titleBgColor:'white'
     },
 
     /**
@@ -45,6 +53,7 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
+
     onReady: function () {
 
     },
@@ -89,5 +98,28 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    modalSetting:function (param) {  
+      this.setData({
+        'modalSetting.showModal':true,
+        alertType:'confirm',
+        titleBgColor:'green'
+      })
+    },
+
+
+    ConfirmCustomEvent:function(){
+      console.log('父组件执行了confirm后的自定义事件')
+      setTimeout(function (param) {  
+        console.log("测试同步异步")
+      },10000)
+      /*测试结果：异步，
+      即父组件还未调用完成，子组件进行下一步操作，关闭了弹窗，
+      故设置属性，alertSetting.hideConfirmModalAfterCustomEvent ，
+      及调用自定义confirm事件后，是否等父组件完成函数调用再关闭modal框，
+      默认true:父组件还没有执行完直接关闭,
+      如果要手动关闭，就需手动HideModal函数关闭
+       */
     }
 })
