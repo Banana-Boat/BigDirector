@@ -21,6 +21,9 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
+        "cu-custom": "/colorui/components/cu-custom",
+        "bd-tarbar":"/components/tarbar/tarbar",
+        "bd-alert":"/components/alert/alert",
+        "bd-loading":"/components/loading/loading"
     }
 }

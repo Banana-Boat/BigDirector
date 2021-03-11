@@ -1,8 +1,8 @@
-<nav-bar bgColor="bg-black">
+<cu-custom bgColor="bg-black">
     <view slot="content">
         <view class="nav-title text-white">我是大导演</view>
     </view>
-</nav-bar>
+</cu-custom>
 <view class="location-bar cu-bar justify-start shadow-warp margin-bottom-sm bg-white text-xl">
     <text class="cuIcon-location text-black margin-lr-sm">
         <text class="location-text margin-left-sm">杭州市 杭州电子科技大学</text>

@@ -1,8 +1,4 @@
 {
   "usingComponents": {
-    "nav-bar": "/colorui/components/cu-custom",
-    "tarbar":"/components/tarbar/tarbar",
-    "alert":"/components/alert/alert",
-    "loading":"/components/loading/loading"
   }
 }
