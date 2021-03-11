@@ -41,7 +41,12 @@ Page({
           alertSetting:{
             showCancelIcon:false,
           },
-          titleBgColor:'white'
+          titleBgColor:'white',
+          loading:{
+            showLoading:true,
+            imgPath:'/static/img/head.png',
+            loadingText:'加载中...'
+          }
     },
 
     /**
@@ -99,6 +104,18 @@ Page({
     onShareAppMessage: function () {
 
     },
+
+    /*
+    改变组件有两种方式，
+    一种是向现在这样，
+    利用组件中的observers数据监听器来改变数据;
+    还有一种就是你为这个组件设置一个id
+    通过seleceComponent函数获取组件
+    通过对象调用组件中的数据和方法
+    
+    ！！！这里推荐第一种，偏向于VUE的方式调用组件，
+    利用双向绑定数据实时控制组件的显示和数据改变
+    */
 
     modalSetting:function (param) {  
       this.setData({

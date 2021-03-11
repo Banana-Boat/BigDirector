@@ -2,7 +2,9 @@
 <view>
 <text>performance.wxml</text>
 <tarbar cursor="tarbar2" tarbarSetting="{{tarbarSetting}}" tarbarList="{{tarbarList}}"></tarbar>
-<alert showModal="{{modalSetting.showModal}}" titleBgColor="{{titleBgColor}}" type="{{alertType}}"  bind:ConfirmCustomEvent="ConfirmCustomEvent"></alert>
-
+<!-- <alert showModal="{{true}}" titleBgColor="{{titleBgColor}}" type="remind"  bind:ConfirmCustomEvent="ConfirmCustomEvent"></alert> -->
+<!-- <alert showModal="{{false}}" type="confirm" showCancelIcon="{{false}}"></alert> -->
 <button class="cu-btn bg-red" bindtap="modalSetting">测试弹窗</button>
+
+<loading showLoading="{{true}}" showLoadingText="{{true}}"></loading>
 </view>

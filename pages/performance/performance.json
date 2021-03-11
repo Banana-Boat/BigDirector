@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "tarbar":"/components/tarbar/tarbar",
-    "alert":"/components/alert/alert"
+    "alert":"/components/alert/alert",
+    "loading":"/components/loading/loading"
   }
 }
