@@ -2,7 +2,6 @@
   "usingComponents": {
     "nav-bar": "/colorui/components/cu-custom",
     "tarbar":"/components/tarbar/tarbar",
-    "alert-remind":"/components/alert/remind/remind",
     "alert":"/components/alert/alert"
   }
 }
