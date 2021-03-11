@@ -1,0 +1,2 @@
+/* components/alert/remind/remind.wxss*/
+@import '/app.wxss';

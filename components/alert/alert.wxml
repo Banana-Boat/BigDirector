@@ -1,0 +1,20 @@
+<!--components/alert/remind/remind.wxml-->
+<view class="cu-modal {{showModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-{{titleBgColor}} justify-end">
+      <view class="content text-{{titleColor}}">{{title}}</view>
+      <view class="action" bindtap="HideModal">
+        <text wx:if="{{showCancelIcon}}" class="cuIcon-close text-{{cancelIconColor}}"></text>
+      </view>
+    </view>
+    <view class="padding-xl bg-{{contentBgColor}}">
+     {{content}}
+    </view>
+    <view wx:if="{{type==='confirm'}}" class="cu-bar bg-{{confirmBtnBgColor}} justify-{{confirmBtnPositon}}">
+      <view class="action">
+        <button class="cu-btn bg-{{confirmBtnColor}} margin-left" bindtap="{{confirmBtnCustomEvent?'ConfirmCustomEvent':'HideModal'}}">{{confirmBtnText}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+

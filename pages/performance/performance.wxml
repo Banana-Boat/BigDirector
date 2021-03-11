@@ -51,3 +51,12 @@
         </view>
     </view>
 </scroll-view>
+
+<!-- <view>
+    <text>performance.wxml</text>
+    <tarbar cursor="tarbar2" tarbarSetting="{{tarbarSetting}}" tarbarList="{{tarbarList}}"></tarbar>
+    <alert showModal="{{modalSetting.showModal}}" titleBgColor="{{titleBgColor}}" type="{{alertType}}"  bind:ConfirmCustomEvent="ConfirmCustomEvent"></alert>
+
+    <alert-remind></alert-remind>
+    <button class="cu-btn bg-red" bindtap="modalSetting">测试弹窗</button>
+</view> -->
