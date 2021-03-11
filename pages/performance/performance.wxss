@@ -11,9 +11,17 @@
 .main-content{
     background-color: #f7f7f7;
 }
-
-swiper-item{
-    padding: 20rpx 0 !important;
+/* 重写main.wxss中的样式 */
+.card-swiper {
+	height: 280rpx !important;
+}
+.card-swiper swiper-item{
+    width: 206rpx !important;
+	left: 0rpx !important;
+    padding: 0rpx !important;
+}
+.card-swiper swiper-item .swiper-item {
+	transform: scale(0.85);
 }
 
 .perf-name{
