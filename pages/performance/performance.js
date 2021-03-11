@@ -1,58 +1,78 @@
-// pages/performance/performance.js
+const app = getApp()
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-        tarbarSetting: {
-            textColor:'black',
-            tarbarColor:'white'
-          },
-          tarbarList: [{
-              icon: '/static/img/project.png',
-              iconSelected:'/static/img/project_selected.png',
-              router: '/pages/mine/mine',
-              tag: 'tarbar1'
-            },
-            {
-              icon: '/static/img/project.png',
-              iconSelected:'/static/img/project_selected.png',
-              router: '/pages/mine/project/project',
-              tag: 'tarbar2'
-            },
-            {
-              icon: '/static/img/project.png',
-              iconSelected:'/static/img/project_selected.png',
-              router: '/pages/mine/userInfoEdit/userInfoEdit',
-              tag: 'tarbar3'
-            },
-            {
-              icon: '/static/img/project.png',
-              iconSelected:'/static/img/project_selected.png',
-              router: '/pages/mine/userTicket/userTicket',
-              tag: 'tarbar4'
-            }
-          ],
-          modalSetting:{
-            showModal:false
-          },
-          alertType:'confirm',
-          alertSetting:{
-            showCancelIcon:false,
-          },
-          titleBgColor:'white',
-          loading:{
-            showLoading:true,
-            imgPath:'/static/img/head.png',
-            loadingText:'加载中...'
-          }
+// <<<<<<< HEAD
+//         tarbarSetting: {
+//             textColor:'black',
+//             tarbarColor:'white'
+//           },
+//           tarbarList: [{
+//               icon: '/static/img/project.png',
+//               iconSelected:'/static/img/project_selected.png',
+//               router: '/pages/mine/mine',
+//               tag: 'tarbar1'
+//             },
+//             {
+//               icon: '/static/img/project.png',
+//               iconSelected:'/static/img/project_selected.png',
+//               router: '/pages/mine/project/project',
+//               tag: 'tarbar2'
+//             },
+//             {
+//               icon: '/static/img/project.png',
+//               iconSelected:'/static/img/project_selected.png',
+//               router: '/pages/mine/userInfoEdit/userInfoEdit',
+//               tag: 'tarbar3'
+//             },
+//             {
+//               icon: '/static/img/project.png',
+//               iconSelected:'/static/img/project_selected.png',
+//               router: '/pages/mine/userTicket/userTicket',
+//               tag: 'tarbar4'
+//             }
+//           ],
+//           modalSetting:{
+//             showModal:false
+//           },
+//           alertType:'confirm',
+//           alertSetting:{
+//             showCancelIcon:false,
+//           },
+//           titleBgColor:'white',
+//           loading:{
+//             showLoading:true,
+//             imgPath:'/static/img/head.png',
+//             loadingText:'加载中...'
+//           }
+// =======
+        cardCur: 0,
+        swiperList: [{
+            id: 0,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 1,
+            url: '/static/img/poster2.jpg',
+          }, {
+            id: 2,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 3,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 4,
+            url: '/static/img/poster1.jpg'
+          }, {
+            id: 5,
+            url: '/static/img/poster1.jpg'
+          }],
+// >>>>>>> fd82bd9d913837a1cf9ea14dc454664332fa10e1
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
     onLoad: function (options) {
+    },
+    cardSwiper(e) {
+        this.setData({
+          cardCur: e.detail.current
+        })
     },
 
     /**
