@@ -1,1 +1,67 @@
 /* pages/mine/mine.wxss */
+
+.UCenter-bg {
+  background-color: #FA753D;
+  background-size: cover;
+  height: 540rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.UCenter-bg .user{
+  width: 100%;
+  height:170rpx;
+}
+.user-box{
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: -150rpx;
+  z-index: 999;
+}
+
+.user-box .user-opt{
+  background-color: white;
+  width: 90%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.opt-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.opt-item .opt-icon-box{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.opt-item .opt-icon-box .opt-icon{
+
+}
+
+
+.opt-item .opt-text{
+  width: 128rpx;
+  text-align: center;
+}
+
+
+
+
+

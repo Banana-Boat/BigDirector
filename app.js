@@ -1,8 +1,10 @@
 //app.js
+
 App({
   onLaunch: function () {
     wx.getSystemInfo({
       success: e => {
+
         this.globalData.windowHeight = e.windowHeight
         this.globalData.windowWidth = e.windowWidth
         this.globalData.statusBar = e.statusBarHeight
@@ -17,5 +19,6 @@ App({
     })
   },
   globalData: {
+    
   }
 })

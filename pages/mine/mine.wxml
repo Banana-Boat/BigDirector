@@ -1,4 +1,57 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
-<!-- <bd-tarbar cursor="我的" textColorSelected="blue" tarbarList="{{tarbarList1}}"></bd-tarbar> -->
-
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <view class="user flex">
+      <view class="flex-sub flex justify-center align-center">
+        <image class="cu-avatar xl round" src="/static/img/mine.png"></image>
+      </view>
+      <view class="flex-treble flex align-center text-bold">
+        <text class="text-lg" style="font-size:36rpx;margin-top:-30rpx">请登录</text>
+      </view>
+    </view>
+  </view>
+  <view class="user-box">
+    <view class="user-opt flex align-center">
+      <view class="flex-sub flex justify-center">
+        <view class="opt-item">
+          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FF6B71, #FF374A);">
+           <view class="cuIcon-pic opt-icon"></view>
+          </view>
+          <view class="opt-text margin-top-sm">创建项目</view>
+        </view>
+      </view>
+      <view class="flex-sub flex justify-center">
+        <view class="opt-item">
+          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FFD111, #FFAC17);">
+            <view class="cuIcon-pic opt-icon"></view>
+          </view>
+          <view class="opt-text margin-top-sm">我的预约</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="margin-top-sm">
+    <view class="cu-list menu">
+      <view class="cu-item bg-white arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+          <text class="cuIcon-discoverfill text-orange"></text>
+          <text class="text-black margin-left-sm">联系我们</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="cu-list menu">
+      <view class="cu-item bg-white arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+          <text class="cuIcon-discoverfill text-orange"></text>
+          <text class="text-black margin-left-sm">使用手册</text>
+        </navigator>
+      </view>
+      <view class="cu-item bg-white arrow">
+        <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
+          <text class="cuIcon-discoverfill text-orange"></text>
+          <text class="text-black margin-left-sm">关于我们</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</scroll-view>
