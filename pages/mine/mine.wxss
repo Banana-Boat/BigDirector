@@ -52,7 +52,8 @@
   align-items: center;
 }
 .opt-item .opt-icon-box .opt-icon{
-
+  width: 50%;
+  height: 50%;
 }
 
 
