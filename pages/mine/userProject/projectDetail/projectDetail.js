@@ -1,32 +1,50 @@
-// pages/mine/userProject/project/project.js
-Page({
+const app = getApp()
 
-    /**
-     * 页面的初始数据
-     */
+Page({
     data: {
 
+        componentHeight: 0,
+        perfName: '计算机迎新晚会',
+        pageCur: '人员',
+        tarbarList: [{
+                icon: '/static/img/project.png',
+                iconSelected: '/static/img/project_selected.png',
+                tag: '台本'
+            },{
+                icon: '/static/img/project.png',
+                iconSelected: '/static/img/project_selected.png',
+                tag: '人员'
+            },{
+                icon: '/static/img/project.png',
+                iconSelected: '/static/img/project_selected.png',
+                tag: '票务'
+            }
+        ]
+    },
+    PageCurChange(e) {
+        this.setData({
+            pageCur: e.detail
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+       
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
 
     /**

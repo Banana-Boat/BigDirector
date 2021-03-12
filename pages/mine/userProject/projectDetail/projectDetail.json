@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "playscript": "/pages/mine/userProject/projectDetail/playscript/playscript",
+    "staff": "/pages/mine/userProject/projectDetail/staff/staff",
+    "ticket": "/pages/mine/userProject/projectDetail/ticket/ticket"
+  }
+}

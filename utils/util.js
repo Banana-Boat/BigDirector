@@ -15,12 +15,12 @@ const formatNumber = n => {
 }
 
 // 像素单位px与rpx转换
-const RpxToPx = (rpx, windowWidth) => {
-  return rpx / 750 * windowWidth
+const RpxToPx = (rpx) => {
+  return Number.parseFloat(rpx / 750 * getApp().globalData.windowWidth)
 }
 
-const PxToRpx = (px, windowWidth) => {
-  return px * 750 / windowWidth
+const PxToRpx = (px) => {
+  return Number.parseFloat(px * 750 / getApp().globalData.windowWidth)
 }
 
 module.exports = {

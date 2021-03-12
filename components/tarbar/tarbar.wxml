@@ -1,7 +1,7 @@
 <!--components/tarbar/tarbar.wxml-->
 
-<view class="cu-bar tabbar foot bg-{{tarbarColor}}">
-	<view class="action" wx:for="{{tarbarList}}" wx:key="index" data-router="{{item.router}}" bind:tap="RouterSwitch">
+<view id="tarbar" class="cu-bar tabbar foot bg-{{tarbarColor}}">
+	<view class="action" wx:for="{{tarbarList}}" bindtap="TarbarItemTap" data-tag="{{item.tag}}" wx:key="index">
 		<view class="cuIcon-cu-image">
 			<image src="{{cursor===item.tag?item.iconSelected:item.icon}}" />
 		</view>

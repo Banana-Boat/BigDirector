@@ -3,6 +3,7 @@ App({
   onLaunch: function () {
     wx.getSystemInfo({
       success: e => {
+        // windowHeight不包括标题栏的高度！！
         this.globalData.windowHeight = e.windowHeight
         this.globalData.windowWidth = e.windowWidth
         this.globalData.statusBar = e.statusBarHeight

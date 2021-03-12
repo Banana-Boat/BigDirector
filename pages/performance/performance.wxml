@@ -1,6 +1,6 @@
-<cu-custom bgColor="bg-black">
+<cu-custom bgColor="bg-gradual-orange">
     <view slot="content">
-        <view class="nav-title text-white">我是大导演</view>
+        <view class="custom-bar text-white">我是大导演</view>
     </view>
 </cu-custom>
 <view class="location-bar cu-bar justify-start shadow-warp margin-bottom-sm bg-white text-xl">
@@ -10,10 +10,10 @@
 </view>
 <scroll-view class="main-content padding-0 shadow">
     <view class="bg-white padding-lr-xs padding-bottom-sm">
-        <swiper class="card-swiper margin-tb-sm" current="{{perfIndex}}" circular="true" bindchange="ChangeSwiperItem">
+        <swiper class="card-swiper margin-tb-sm" current="{{perfIndex}}" circular="true" bindchange="SwiperItemChange">
             <swiper-item wx:for="{{perfList}}" wx:key="index" class="{{perfIndex==index?'cur':''}}"
             style="left:{{swiperLeft}}px !important;">
-                <view class="swiper-item" data-index="{{index}}" bindtap="TapSwiperItem">
+                <view class="swiper-item" data-index="{{index}}" bindtap="SwiperItemTap">
                     <image src="{{item.url}}" mode="aspectFill"></image>
                 </view>
             </swiper-item>
@@ -39,7 +39,7 @@
                 <text class="text-gray">{{perfList[perfIndex].place}}</text>
             </view>
             <view class="flex align-center justify-center">
-                <button class="cu-btn round line-orange">抢票</button>
+                <button class="cu-btn round line-orange" bindtap="GrabTicket">抢票</button>
             </view>
         </view>
         <view class="flex flex-direction padding-lr-sm padding-tb-sm">
@@ -50,3 +50,5 @@
         </view>
     </view>
 </scroll-view>
+
+<view id="_tarbar" style="position: absolute;height:calc(100rpx + env(safe-area-inset-bottom));"></view>

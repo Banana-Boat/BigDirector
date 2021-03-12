@@ -7,3 +7,8 @@ page{
     font-family: Arial;
 }
 
+.custom-bar{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+

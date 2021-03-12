@@ -1,0 +1,12 @@
+<cu-custom isBack bgColor="bg-gradual-orange">
+    <view slot="content">
+        <view class="custom-bar text-white">{{perfName}}</view>
+    </view>
+</cu-custom>
+
+<playscript wx:if="{{pageCur=='台本'}}"></playscript>
+<staff wx:if="{{pageCur=='人员'}}"></staff>
+<ticket wx:if="{{pageCur=='票务'}}"></ticket>
+
+<bd-tarbar id="tarbar" tarbarList="{{tarbarList}}" cursor="{{pageCur}}" bind:cursor="PageCurChange"></bd-tarbar>
+

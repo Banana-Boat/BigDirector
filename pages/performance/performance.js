@@ -1,10 +1,9 @@
-const util = require('../../utils/util')
+import {PxToRpx, RpxToPx} from '../../utils/util'
 const app = getApp()
 
 Page({
     data: {
-      tarbarList1: app.globalData.tarbarList1,
-      swiperLeft: app.globalData.windowWidth / 2 - util.RpxToPx(103 + 10, app.globalData.windowWidth),
+      swiperLeft: app.globalData.windowWidth / 2 - RpxToPx(103 + 10, app.globalData.windowWidth),
       perfIndex: 0,
       perfList: [{
           id: 0,
@@ -69,20 +68,27 @@ Page({
         }]
     },
     onLoad: function (options) {
-     
-    //  wx.hideTabBar({
-    //    animation: true,
-    //  })
+      var query = wx.createSelectorQuery()
+      query.select('#_tarbar').boundingClientRect(function (res) {
+        app.globalData.tarbarHeight = res.height
+      }).exec()
     },
-    ChangeSwiperItem(e) {
+    onReady: function () {
+      
+    },
+    SwiperItemChange(e) {
       this.setData({
         perfIndex: e.detail.current
       })
     },
-    TapSwiperItem(e) {
-      console.log(e)
+    SwiperItemTap(e) {
       this.setData({
         perfIndex: e.currentTarget.dataset.index
+      })
+    },
+    GrabTicket() {
+      wx.navigateTo({
+        url: '/pages/mine/userProject/projectDetail/projectDetail',
       })
     },
     /**

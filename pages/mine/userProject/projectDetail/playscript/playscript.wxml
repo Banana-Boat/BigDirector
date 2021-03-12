@@ -1,2 +1,4 @@
 <!--pages/mine/userProject/project/playscript/playscript.wxml-->
 <text>pages/mine/userProject/project/playscript/playscript.wxml</text>
+<scroll-view>
+</scroll-view>
