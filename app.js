@@ -1,4 +1,5 @@
 //app.js
+
 App({
   onLaunch: function () {
     wx.getSystemInfo({
@@ -18,5 +19,6 @@ App({
     })
   },
   globalData: {
+    
   }
 })
