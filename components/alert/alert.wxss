@@ -1,0 +1,3 @@
+.min-h-80{
+    min-height: 90rpx !important;
+}

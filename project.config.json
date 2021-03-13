@@ -4,7 +4,7 @@
         "ignore": []
     },
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": true,
         "postcss": true,
         "minified": true,
@@ -18,21 +18,21 @@
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
         "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": false,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
             "outputPath": ""
         },
+        "bundle": false,
         "useIsolateContext": true,
         "useCompilerModule": true,
         "userConfirmedUseCompilerModuleSwitch": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
-        "minifyWXSS": true,
-        "bundle": false,
-        "useApiHook": true,
-        "useApiHostProcess": false
+        "minifyWXSS": true
     },
     "compileType": "miniprogram",
     "libVersion": "2.11.0",

@@ -1,7 +1,8 @@
 // components/alert/remind/remind.js
 Component({
   options: {
-    styleIsolation: 'apply-shared'
+    styleIsolation: 'apply-shared',
+    multipleSlots: true
   },
   properties: {
     /*
@@ -90,12 +91,12 @@ Component({
     //弹窗的标题
     title: {
       type: String,
-      value: "Alert"
+      value: ""
     },
     //弹窗的内容
     content: {
       type: String,
-      value: "Alert Content"
+      value: ""
     }
   },
 
@@ -105,7 +106,13 @@ Component({
 
   observers:{
     '**':function(data){
-      this.data = data
+      let _this = this
+      _this.data = data
+      if (_this.data.showModal && _this.data.type === 'remind') {
+        setTimeout(function () {
+        _this.HideModal()
+        }, _this.data.hideModalTime)
+      }
     }
   },
 
@@ -119,18 +126,6 @@ Component({
   //生命周期函数
 
   lifetimes: {
-    ready: function (param) {
-      let _this = this
-      const hideModalTime = _this.properties.hideModalTime
-      const modalType = _this.properties.type;
-      //如果是提醒框,自动关闭
-      if (modalType === 'remind') {
-        setTimeout(function () {
-          _this.HideModal()
-        }, hideModalTime)
-      }
-
-    }
   },
 
   /**
