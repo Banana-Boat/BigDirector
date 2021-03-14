@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/mine/mine",
         "pages/performance/performance",
+        "pages/mine/mine",
         "pages/mine/userProject/projectDetail/projectDetail",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userInfoEdit/userInfoEdit",
@@ -20,7 +20,8 @@
         "cu-custom": "/colorui/components/cu-custom",
         "bd-tarbar": "/components/tarbar/tarbar",
         "bd-alert": "/components/alert/alert",
-        "bd-loading": "/components/loading/loading"
+        "bd-loading": "/components/loading/loading",
+        "bd-picker": "/components/picker/picker"
     },
     "tabBar": {
         "color": "#bfbfbf",
@@ -40,5 +41,10 @@
                 "text": "我的"
             }
         ]
+    },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于所在大学的定位"
+      }
     }
 }

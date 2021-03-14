@@ -65,7 +65,6 @@ Component({
                 }).exec();
             }
             that.setData({
-                load: false,
                 list: list
             })
             let scrollTop = e.detail.scrollTop + 20

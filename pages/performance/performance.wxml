@@ -3,10 +3,11 @@
         <view class="custom-bar text-white">我是大导演</view>
     </view>
 </cu-custom>
-<view class="location-bar cu-bar justify-start shadow-warp margin-bottom-sm bg-white text-xl">
-    <text class="cuIcon-location text-black margin-lr-sm">
-        <text class="location-text margin-left-sm">杭州市 杭州电子科技大学</text>
+<view class="location-bar cu-bar justify-between shadow-warp margin-bottom-sm bg-white text-xl" bindtap="TapLocationBar">
+    <text class="cuIcon-location text-black text-cut margin-left-sm">
+        <text class="location-text margin-left-sm">{{location}} {{university}}</text>
     </text>
+    <text class="cuIcon-right margin-right-sm"></text>
 </view>
 <scroll-view class="main-content padding-0 shadow">
     <view class="bg-white padding-lr-xs padding-bottom-sm">
@@ -51,4 +52,12 @@
     </view>
 </scroll-view>
 
+<bd-alert showModal="{{isShowLocationModal}}" hideModalTime="1500" title="提示" content="请在小程序的设置中手动开启定位功能" titleColor="orange"></bd-alert>
+<bd-picker 
+    isShowPicker="{{isShowPicker}}"
+    bind:sure="PickerSure"
+    bind:cancle="PickerCancel"
+    listData="{{universityList}}"
+    titleText="选择大学">
+</bd-picker>
 <view id="_tarbar" style="position: absolute;height:calc(100rpx + env(safe-area-inset-bottom));"></view>
