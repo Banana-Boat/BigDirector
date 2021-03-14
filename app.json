@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/mine/mine",
         "pages/mine/userProject/userProject",
         "pages/performance/performance",
-        "pages/mine/mine",
         "pages/mine/userProject/projectDetail/projectDetail",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userInfoEdit/userInfoEdit",

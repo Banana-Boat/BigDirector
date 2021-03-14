@@ -40,7 +40,7 @@
       </view>
       <view class="flex-sub" style="width:25%;">
         <view class="flex align-center justify-center" style="height:100%;">
-          <button class="cu-btn round sm lines-orange">进入</button>
+          <button data-id="{{item.id}}" bindtap="SwitchToProjectDetail" class="cu-btn round sm lines-orange">进入</button>
         </view>
       </view>
     </view>
@@ -49,6 +49,106 @@
 
 
 
-<view class="flex justify-center" id="create-project-btn">
-  <button style="width:90vw" class="cu-btn bg-mine-bgcolor margin-tb-sm lg">创建项目</button>
+<view class="flex padding  justify-center" id="create-project-btn">
+  <button bindtap="ShowCreateProjectModal" style="width:90vw"
+    class="cu-btn bg-mine-bgcolor margin-tb-sm lg">创建项目</button>
+</view>
+
+
+<view class="cu-modal bottom-modal {{showCreateProjectModal?'show':''}}" bindtap="HideCreateProjectModal">
+  <view class="cu-dialog" style="height:{{scrollViewHeight*0.9}}rpx;" catchtap>
+    <view class="cu-bar bg-white flex justify-start" id="cu-bar-title">
+      <view class="action text-black text-bold">新的项目</view>
+    </view>
+    <view style="height:{{scrollViewHeight*0.9 - cuBarTitle}}rpx">
+      <scroll-view scroll-y style="height:{{scrollViewHeight*0.9 - cuBarTitle - projectConfirmBtnHeight}}rpx;">
+        <form>
+          <view class="cu-form-group margin-top">
+            <view class="title">项目名称</view>
+            <input placeholder="必填" class="text-left" value="{{projectForm.proName}}"
+              bindinput="InputProNameValue"></input>
+          </view>
+
+          <view class="cu-form-group margin-top">
+            <view class="title">演出名称</view>
+            <input placeholder="填写演出对外名称" class="text-left" value="{{projectForm.showName}}"
+              bindinput="InputShowNameValue"></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">演出地点</view>
+            <input placeholder="填写剧场位置" class="text-left" value="{{projectForm.showPlace}}"
+              bindinput="InputShowPlaceValue"></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">演出日期</view>
+            <picker mode="date" value="{{projectForm.showDate}}" start="{{datePicker[0]}}" end="{{datePicker[1]}}"
+              bindchange="DateChange">
+              <view class="picker">
+                {{projectForm.showDate}}
+              </view>
+            </picker>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">开始时间</view>
+            <picker mode="time" value="{{projectForm.startTime}}" start="00:00" end="23:59" bindchange="TimeChange">
+              <view class="picker">
+                {{projectForm.startTime}}
+              </view>
+            </picker>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">预计时长</view>
+            <picker mode="time" value="{{projectForm.showDuration}}" start="00:00" end="10:00"
+              bindchange="DurationChange">
+              <view class="picker">
+                {{duration.hour}}小时{{duration.minute}}分钟
+              </view>
+            </picker>
+          </view>
+
+          <view class="cu-form-group margin-top">
+            <view class="title">主办方</view>
+            <input placeholder="填写项目主办方" class="text-left" value="{{projectForm.sponsor}}"
+              bindinput="InputSponsorValue"></input>
+          </view>
+          <view class="cu-form-group align-start">
+            <view class="title">项目描述</view>
+            <textarea placeholder="描述这场演出" class="text-left" value="{{projectForm.introduce}}"
+              bindinput="InputIntroduceValue"></textarea>
+          </view>
+
+          <view class="cu-form-group">
+            <view class="title">海报</view>
+            <view wx:if="{{projectForm.posterImageUrl===null}}">
+              <view  class="cu-avatar radius" bindtap="ChoosePosterImage"></view>
+            </view>
+            <view wx:else>
+              <text class="margin-right text-grey" >{{posterImageSize}}</text>
+              <text class="margin-right text-grey" bindtap="RemovePosterImage">丢弃选择</text>
+              <text class="margin-right text-orange" bindtap="ChoosePosterImage">重新选择</text>
+              <image bindtap="PosterImageView" class="cu-avatar radius" src="{{projectForm.posterImageUrl}}"></image>
+            </view>
+          </view>
+
+          <view class="cu-form-group">
+            <view class="title">节目单</view>
+            <view wx:if="{{projectForm.listImageUrl===null}}">
+              <view  class="cu-avatar radius" bindtap="ChooseListImage"></view>
+            </view>
+            <view wx:else>
+              <text class="margin-right text-grey" >{{listImageSize}}</text>
+              <text class="margin-right text-grey" bindtap="RemoveListImage">丢弃选择</text>
+              <text class="margin-right text-orange" bindtap="ChooseListImage">重新选择</text>
+              <image bindtap="ListImageView" class="cu-avatar radius" src="{{projectForm.listImageUrl}}"></image>
+            </view>
+          </view>
+
+        </form>
+      </scroll-view>
+      <view class="flex  justify-center margin-top-xs" id="create-project-btn-confirm">
+        <button style="width:90vw" class="cu-btn bg-mine-bgcolor margin-tb-sm lg">确定</button>
+      </view>
+    </view>
+
+  </view>
 </view>
