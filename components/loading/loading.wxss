@@ -1,1 +1,3 @@
-/* components/loading/loading.wxss */
+.loading-img{
+    zoom: 2.2;
+}

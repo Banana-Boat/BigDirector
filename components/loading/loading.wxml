@@ -1,6 +1,6 @@
 <!--components/loading/loading.wxml-->
 <view class='cu-load load-modal' wx:if="{{showLoading}}">
   <!-- <view class='cuIcon-emojifill text-orange'></view> -->
-  <image src='{{imgPath}}' class='png' mode='aspectFit'></image>
+  <image src='{{imgPath}}' class='loading-img png' mode='aspectFit'></image>
   <view wx:if="{{showLoadingText}}" class='gray-text text-{{loadingTextColor}}'>{{loadingText}}</view>
 </view>

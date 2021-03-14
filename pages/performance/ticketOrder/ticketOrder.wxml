@@ -1,2 +1,5 @@
-<!--pages/performance/ticketOrder/ticketOrder.wxml-->
-<text>pages/performance/ticketOrder/ticketOrder.wxml</text>
+<cu-custom isBack bgColor="bg-gradual-orange">
+    <view slot="content">
+        <view class="custom-bar text-white">抢票</view>
+    </view>
+</cu-custom>

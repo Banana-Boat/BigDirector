@@ -265,6 +265,11 @@ Page({
               }]
         })
     },
+    EnterProject() {
+      wx.navigateTo({
+        url: '/pages/mine/userProject/projectDetail/projectDetail',
+      })
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

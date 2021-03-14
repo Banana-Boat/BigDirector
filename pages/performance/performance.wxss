@@ -4,9 +4,6 @@
 .location-text{
     font-size: 1rem;
 }
-.main-content{
-    background-color: #f7f7f7;
-}
 /* 重写main.wxss中的样式 */
 .card-swiper {
 	height: 280rpx !important;

@@ -54,11 +54,11 @@ Component({
 
     /*
     加载框的默认关闭时间
-    默认是10s，10s后自动关闭
+    默认是100s，100s后自动关闭
     */
    hideDefaultTime: {
     type: Number,
-    value: 10000
+    value: 100000
   }
 
 

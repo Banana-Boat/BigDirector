@@ -1,10 +1,10 @@
 {
     "pages": [
-        "pages/mine/userProject/userProject",
         "pages/performance/performance",
+        "pages/performance/ticketOrder/ticketOrder",
+        "pages/mine/userProject/userProject",
         "pages/mine/mine",
         "pages/mine/userProject/projectDetail/projectDetail",
-        "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userInfoEdit/userInfoEdit",
         "pages/mine/userTicket/userTicket",
         "pages/mine/userTicket/ticketDetail/ticketDetail"
@@ -21,7 +21,8 @@
         "bd-tarbar": "/components/tarbar/tarbar",
         "bd-alert": "/components/alert/alert",
         "bd-loading": "/components/loading/loading",
-        "bd-picker": "/components/picker/picker"
+        "bd-picker": "/components/picker/picker",
+        "bd-scroll": "/components/scroll/scroll"
     },
     "tabBar": {
         "color": "#bfbfbf",
