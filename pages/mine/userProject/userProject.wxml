@@ -39,7 +39,7 @@
         </view>
       </view>
       <view class="flex-sub" style="width:25%;">
-        <view class="padding flex align-center justify-center" style="height:100%;">
+        <view class="flex align-center justify-center" style="height:100%;">
           <button class="cu-btn round sm lines-orange">进入</button>
         </view>
       </view>

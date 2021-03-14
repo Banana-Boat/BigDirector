@@ -24,7 +24,7 @@
 }
 
 .project-item{
-  height: 100rpx;
+  height: 150rpx;
   width: 100%;
 }
 
