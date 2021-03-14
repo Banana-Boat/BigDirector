@@ -13,6 +13,7 @@
     </view>
     <view wx:if="{{type==='confirm'}}" class="cu-bar bg-{{confirmBtnBgColor}} justify-{{confirmBtnPositon}}">
       <view class="action">
+        <button wx:if="{{showConfirmCancelBtn}}" class="cu-btn bg-{{confirmCancelBtnColor}} margin-left" bindtap="HideModal">{{confirmCancelBtnText}}</button>
         <button class="cu-btn bg-{{confirmBtnColor}} margin-left" bindtap="{{confirmBtnCustomEvent?'ConfirmCustomEvent':'HideModal'}}">{{confirmBtnText}}</button>
       </view>
     </view>

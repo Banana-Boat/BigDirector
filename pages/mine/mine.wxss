@@ -14,7 +14,7 @@
   color: #fff;
   font-weight: 300;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  z-index: -1;
+  z-index: 1;
 }
 
 .UCenter-bg .user{
@@ -35,6 +35,7 @@
   width: 90%;
   height: 100%;
   border-radius: 20rpx;
+  z-index: 999;
 }
 
 .opt-item{

@@ -10,7 +10,6 @@ App({
    */
     wx.getSystemInfo({
       success: e => {
-        console.log(e)
         // windowHeight不包括标题栏的高度！！
         that.globalData.windowHeight = e.windowHeight
         that.globalData.windowWidth = e.windowWidth
@@ -27,21 +26,30 @@ App({
 
     /**
      * mengxun
-     * 获取用户信息
+     * 获取openid
      * */
-    wx.getSetting({
-     success(res){
-       //如果用户授权
-       if(res.authSetting['scope.userInfo']){
-         //获取用户信息
-         wx.getUserInfo({
-           success:function(res){
-             console.log(res)
-           }
-         })
-       }
-     }
-    })
+    function getOpenId(){
+      return '124'
+    }
+  
+    /**
+     * mengxun
+     * 调用checkUserExist判断用户是否存在
+     * 如果存在，调用getDataBaseUserInfo(openId)函数，
+     * 反之，置为false ,isUserLogin = false 
+     */
+    function checkUserExist(openId){
+      return false
+    }
+
+    /**
+     * mengxun
+     * 获取数据库用户信息，将结果存在globalData的userInfo中,
+     * isUserLogin = true
+     */
+    function getDataBaseUserInfo(openId){
+      
+    }
 
 
   },
@@ -57,9 +65,11 @@ App({
     /**
      * mengxun
      */
-    //用户是否给予授权头像和昵称信息
-    isUserGrantAvatarAndNick:false,
-    //查看用户是否登录
-    isUserLogin:false
+    //用户id
+    openId:null,
+    //查看用户是否登录(用户存在就登录，用户不存在就判定为没登录)
+    isUserLogin:false,
+    //用户信息
+    userInfo:null
   }
 })

@@ -60,6 +60,21 @@ Component({
       type:String,
       value:'white'
     },
+    //是否展示confirm框取消按钮,默认不展示
+    showConfirmCancelBtn:{
+      type:Boolean,
+      value:false
+    },
+    //confirm框取消按钮的颜色
+    confirmCancelBtnColor:{
+      type:String,
+      value:''
+    },
+    //confirm取消框文字
+    confirmCancelBtnText:{
+      type:String,
+      value:'取消'
+    },
     //confirm框确认按钮的颜色
     confirmBtnColor: {
       type:String,

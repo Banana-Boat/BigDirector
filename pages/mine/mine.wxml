@@ -3,10 +3,12 @@
   <view class="UCenter-bg">
     <view class="user flex">
       <view class="flex-sub flex justify-center align-center">
-        <image class="cu-avatar xl round" src="/static/img/mine.png"></image>
+        <image wx:if="{{!isUserLogin}}" class="cu-avatar xl round" src="/static/img/mine.png"></image>
+        <image wx:else class="cu-avatar xl round" src="/static/img/logo.png"></image>
       </view>
       <view class="flex-treble flex align-center text-bold">
-        <text class="text-lg" style="font-size:36rpx;margin-top:-30rpx" bindtap="UserLogin">请登录</text>
+        <text wx:if="{{!isUserLogin}}" class="text-lg" style="font-size:36rpx;margin-top:-30rpx" bindtap="UserLogin">请登录</text>
+        <text wx:else class="text-lg" style="font-size:36rpx;margin-top:-30rpx">nickName</text>
       </view>
     </view>
   </view>
@@ -14,15 +16,17 @@
     <view class="user-opt flex align-center">
       <view class="flex-sub flex justify-center">
         <view class="opt-item">
-          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FF6B71, #FF374A);" bindtap="SwitchToMyProject">
-           <image class="opt-icon text-white" src="/static/img/project_icon_x200.png"></image>
+          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FF6B71, #FF374A);"
+            bindtap="SwitchToMyProject">
+            <image class="opt-icon text-white" src="/static/img/project_icon_x200.png"></image>
           </view>
           <view class="opt-text margin-top-sm">我的项目</view>
         </view>
       </view>
       <view class="flex-sub flex justify-center">
         <view class="opt-item">
-          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FFD111, #FFAC17);">
+          <view class="opt-icon-box" style="background-image: linear-gradient(90deg, #FFD111, #FFAC17);"
+          >
             <image class="opt-icon text-white" src="/static/img/ticket_icon_x200.png"></image>
           </view>
           <view class="opt-text margin-top-sm">我的门票</view>
@@ -34,7 +38,7 @@
     <view class="cu-list menu">
       <view class="cu-item bg-white arrow">
         <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
-          <image  src="/static/img/使用手册.svg"></image>
+          <image src=""></image>
           <text class="text-black margin-left-sm">联系我们</text>
         </navigator>
       </view>
@@ -42,16 +46,25 @@
     <view class="cu-list menu">
       <view class="cu-item bg-white arrow">
         <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
-          <image  src="/static/img/使用手册.svg"></image>
+          <image src=""></image>
           <text class="text-black margin-left-sm">使用手册</text>
         </navigator>
       </view>
       <view class="cu-item bg-white arrow">
         <navigator class="content" hover-class="none" url="../list/list" open-type="redirect">
-          <image src="/static/img/关于我们.svg"></image>
+          <image src=""></image>
           <text class="text-black margin-left-sm">关于我们</text>
         </navigator>
       </view>
     </view>
   </view>
 </scroll-view>
+
+<bd-alert 
+showModal="{{alert.showModal}}"
+type="{{alert.type}}"
+title="{{alert.title}}"
+content="{{alert.content}}"
+showCancelIcon="{{alert.showCancelIcon}}"
+></bd-alert>
+
