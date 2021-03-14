@@ -4,11 +4,11 @@
     <view class="user flex">
       <view class="flex-sub flex justify-center align-center">
         <image wx:if="{{!isUserLogin}}" class="cu-avatar xl round" src="/static/img/mine.png"></image>
-        <image wx:else class="cu-avatar xl round" src="/static/img/logo.png"></image>
+        <image wx:else class="cu-avatar xl round" src="{{userInfo.avatarUrl}}"></image>
       </view>
       <view class="flex-treble flex align-center text-bold">
         <text wx:if="{{!isUserLogin}}" class="text-lg" style="font-size:36rpx;margin-top:-30rpx" bindtap="UserLogin">请登录</text>
-        <text wx:else class="text-lg" style="font-size:36rpx;margin-top:-30rpx">nickName</text>
+        <text wx:else class="text-lg" style="font-size:36rpx;margin-top:-30rpx">{{userInfo.nickName}}</text>
       </view>
     </view>
   </view>

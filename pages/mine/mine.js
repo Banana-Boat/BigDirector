@@ -17,6 +17,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log(app.globalData)
         this.setData({
             isUserLogin: app.globalData.isUserLogin,
             userInfo : app.globalData.userInfo,
@@ -89,6 +90,7 @@ Page({
         wx.getUserProfile({
           desc: '我们将获取您的头像和昵称权限',
           success:function(res){
+              console.log(res)
             //注册用户，如果success,执行一下操作 1 ，否则执行 2
 
             // 1 将数据存到globalData
@@ -109,6 +111,15 @@ Page({
           },fail:function(err){
               console.log(err)
           }
+        })
+    },
+
+    /**
+     * 跳转
+     */
+    SwitchToMyProject:function(){
+        wx.navigateTo({
+          url: '/pages/mine/userProject/userProject',
         })
     }
 

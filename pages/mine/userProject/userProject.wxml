@@ -1,2 +1,54 @@
 <!--pages/mine/userProject/userProject.wxml-->
-<text>pages/mine/userProject/userProject.wxml</text>
+<cu-custom bgColor="bg-mine-bgcolor" isBack="true">
+  <view slot="content">
+    <view class="custom-bar text-white">我的项目</view>
+  </view>
+</cu-custom>
+<scroll-view scroll-y style="height:{{scrollViewHeight}}rpx">
+  <!-- 空项目时 -->
+  <view wx:if="{{projectList.length===0}}" style="width:100%;height:100%;" class="flex justify-center align-center">
+    <view class="pro-empty-area" style="display:flex;flex-direction:column;">
+      <view class="pro-empty-icon flex justify-center align-center">
+        <view>
+          <image style="width:{{scrollViewHeight*0.3*0.8*0.8}}rpx;height:{{scrollViewHeight*0.3*0.8*0.8}}rpx"
+            src="/static/img/projec_empty_icon_x200.png"></image>
+        </view>
+      </view>
+      <view class="pro-empty-text padding flex justify-center align-center">
+        <text>暂时空空如也哦，快来创建你的项目吧</text>
+      </view>
+    </view>
+  </view>
+  <!-- 有项目时 -->
+  <view wx:else>
+    <view wx:for="{{projectList}}" wx:key="index" class="project-item flex solid-bottom">
+      <view class="flex-sub project-item-item  text-cut" style="width:25%;">
+        <view class="item-top flex justify-center align-end text-bold text-black">
+          {{item.date}}
+        </view>
+        <view class="item-under flex justify-center align-center text-grey text-xs">
+          开始 {{item.start}}
+        </view>
+      </view>
+      <view class="flex-twice project-item-item flex text-cut" style="width:50%;">
+        <view class="item-top flex text-left margin-left-xl align-end text-bold text-black">
+          {{item.name}}
+        </view>
+        <view class="item-under flex text-left margin-left-xl align-start text-grey text-xs">
+          {{item.place}}
+        </view>
+      </view>
+      <view class="flex-sub" style="width:25%;">
+        <view class="padding flex align-center justify-center" style="height:100%;">
+          <button class="cu-btn round sm lines-orange">进入</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+
+<view class="flex justify-center" id="create-project-btn">
+  <button style="width:90vw" class="cu-btn bg-mine-bgcolor margin-tb-sm lg">创建项目</button>
+</view>

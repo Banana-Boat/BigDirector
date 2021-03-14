@@ -13,6 +13,12 @@ page {
 	/* Color 可以自定义相关配色 */
 	/* var属性兼容性 --> https://www.caniuse.com/#feat=css-variables */
 	/* 标准色 */
+	/*
+	mengxun添加
+	*/
+	--mine-bgcolor:#FA753D;
+
+
 	--red: #e54d42;
 	--orange: #f37b1d;
 	--yellow: #fbbd08;
@@ -3431,6 +3437,15 @@ scroll-view.cu-steps .cu-item {
 .lines-white::after {
 	border-color: var(--white);
 }
+
+/*
+mengxun
+*/
+.bg-mine-bgcolor{
+	background-color: var(--mine-bgcolor);
+	color:var(--white);
+}
+
 
 .bg-red {
 	background-color: var(--red);
