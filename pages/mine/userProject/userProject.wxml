@@ -65,13 +65,13 @@
 <view class="cu-modal bottom-modal {{showCreateProjectModal?'show':''}}" bindtap="HideCreateProjectModal">
   <view class="cu-dialog" style="height:{{scrollViewHeight*0.9}}rpx;" catchtap>
     <view class="cu-bar bg-white flex justify-center" id="cu-bar-title">
-      <view class="action text-black text-bold">新的项目</view>
+      <view class="action text-black text-bold" style="margin-left: 0;">新的项目</view>
     </view>
     <view style="height:{{scrollViewHeight*0.9 - cuBarTitle}}rpx">
       <scroll-view scroll-y style="height:{{scrollViewHeight*0.9 - cuBarTitle - projectConfirmBtnHeight}}rpx;">
         <form>
           <view class="cu-form-group margin-top">
-            <view class="title">项目名称</view>
+            <view class="title">项目名称 <text class="text-red text-xl">*</text></view>
             <input placeholder="必填" class="text-left" value="{{projectForm.proName}}"
               bindinput="InputProNameValue"></input>
           </view>

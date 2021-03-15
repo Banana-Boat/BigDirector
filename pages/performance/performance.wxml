@@ -3,6 +3,7 @@
         <view class="custom-bar text-white">我是大导演</view>
     </view>
 </cu-custom>
+
 <view class="location-bar cu-bar justify-between shadow-warp bg-white text-xl" bindtap="TapLocationBar">
     <text class="cuIcon-location text-black text-cut margin-left-sm">
         <text class="location-text margin-left-sm">{{location}} {{university}}</text>

@@ -4,8 +4,8 @@ Page({
     data: {
 
         componentHeight: 0,
-        perfName: '计算机迎新晚会',
-        pageCur: '人员',
+        perfName: '20不惑',
+        pageCur: '控制台',
         tarbarList: [{
                 icon: '/static/img/project.png',
                 iconSelected: '/static/img/project_selected.png',
@@ -13,11 +13,11 @@ Page({
             },{
                 icon: '/static/img/project.png',
                 iconSelected: '/static/img/project_selected.png',
-                tag: '人员'
+                tag: '票务'
             },{
                 icon: '/static/img/project.png',
                 iconSelected: '/static/img/project_selected.png',
-                tag: '票务'
+                tag: '控制台'
             }
         ]
     },

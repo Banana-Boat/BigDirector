@@ -1,0 +1,41 @@
+.poster-view{
+    height: 30vh;
+}
+.poster-img{
+    height: 80%;
+}
+.name-text{
+    height: 20%;
+}
+
+.member-left-view{
+    width: 78%;
+}
+.member-right-view{
+    width: 22%;
+}
+.member-title{
+    margin-bottom: 15rpx;
+}
+.avatar-view{
+    white-space: nowrap;
+    width: 100%;
+}
+.avatar-img{
+    height: 88rpx;
+    width: 88rpx;
+}
+.square-view{
+    height: 90rpx;
+    width: 105rpx;
+    border-radius: 15rpx;
+}
+.member-icon{
+    font-size: 85rpx;
+}
+.others-icon{
+    font-size: 55rpx;
+}
+.button-title{
+    font-size: 0.88rem;
+}

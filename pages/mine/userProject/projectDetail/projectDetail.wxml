@@ -5,8 +5,8 @@
 </cu-custom>
 
 <playscript wx:if="{{pageCur=='台本'}}"></playscript>
-<staff wx:if="{{pageCur=='人员'}}"></staff>
 <ticket wx:if="{{pageCur=='票务'}}"></ticket>
+<controlPanel wx:if="{{pageCur=='控制台'}}"></controlPanel>
 
 <bd-tarbar id="tarbar" tarbarList="{{tarbarList}}" cursor="{{pageCur}}" bind:cursor="PageCurChange"></bd-tarbar>
 
