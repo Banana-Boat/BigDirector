@@ -11,6 +11,16 @@ Page({
      */
     data: {
         scrollViewHeight: 0,
+        scroll: {   // 
+            refresh: {
+              type: 'default',
+              style: 'black',
+              background: {
+                color: "#f2f2f2"
+              },
+              shake:true
+            }
+          },
         projectConfirmBtnHeight: 0,
         cuBarTitle: 0,
         projectList: [],
@@ -18,7 +28,7 @@ Page({
         showCreateProjectModal: false,
         duration: {
             hour: 2,
-            minute: 0
+            minute: 30
         },
         posterImageSize: '0B',
         listImageSize:'0B',
@@ -351,6 +361,18 @@ Page({
     onShareAppMessage: function () {
 
     },
+
+     /* 下拉刷新事件 */
+     refresh: function () {
+        let that = this
+        let scroll = that.data.scroll
+        setTimeout(() => {
+        that.setData({
+            scroll: scroll
+        });
+        that.selectComponent("#bd-scroll").loadEnd()
+        }, 300);
+      },
 
     /**
      *  获取scroll-view高度

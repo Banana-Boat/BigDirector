@@ -4,48 +4,55 @@
     <view class="custom-bar text-white">我的项目</view>
   </view>
 </cu-custom>
-<scroll-view scroll-y style="height:{{scrollViewHeight}}rpx">
-  <!-- 空项目时 -->
-  <view wx:if="{{projectList.length===0}}" style="width:100%;height:100%;" class="flex justify-center align-center">
-    <view class="pro-empty-area" style="display:flex;flex-direction:column;">
-      <view class="pro-empty-icon flex justify-center align-center">
-        <view>
-          <image style="width:{{scrollViewHeight*0.3*0.8*0.8}}rpx;height:{{scrollViewHeight*0.3*0.8*0.8}}rpx"
-            src="/static/img/projec_empty_icon_x200.png"></image>
+
+<view style="height:{{scrollViewHeight}}rpx">
+  <bd-scroll id="bd-scroll" scrollOption="{{scroll}}" bindrefresh="refresh">
+    <view slot="inner">
+      <!-- 空项目时 -->
+      <view wx:if="{{projectList.length===0}}" style="width:100%;height:100%;" class="flex justify-center align-center">
+        <view class="pro-empty-area" style="display:flex;flex-direction:column;">
+          <view class="pro-empty-icon flex justify-center align-center">
+            <view>
+              <image style="width:{{scrollViewHeight*0.3*0.8*0.8}}rpx;height:{{scrollViewHeight*0.3*0.8*0.8}}rpx"
+                src="/static/img/projec_empty_icon_x200.png"></image>
+            </view>
+          </view>
+          <view class="pro-empty-text padding flex justify-center align-center">
+            <text>暂时空空如也哦，快来创建你的项目吧</text>
+          </view>
         </view>
       </view>
-      <view class="pro-empty-text padding flex justify-center align-center">
-        <text>暂时空空如也哦，快来创建你的项目吧</text>
+      <!-- 有项目时 -->
+      <view wx:else>
+        <view wx:for="{{projectList}}" wx:key="index" class="project-item flex solid-bottom">
+          <view class="flex-sub project-item-item  text-cut" style="width:25%;">
+            <view class="item-top flex justify-center align-end text-bold text-black">
+              {{item.date}}
+            </view>
+            <view class="item-under flex justify-center align-center text-grey text-xs">
+              开始 {{item.start}}
+            </view>
+          </view>
+          <view class="flex-twice project-item-item flex text-cut" style="width:50%;">
+            <view class="item-top flex text-left margin-left-xl align-end text-bold text-black">
+              {{item.name}}
+            </view>
+            <view class="item-under flex text-left margin-left-xl align-start text-grey text-xs">
+              {{item.place}}
+            </view>
+          </view>
+          <view class="flex-sub" style="width:25%;">
+            <view class="flex align-center justify-center" style="height:100%;">
+              <button data-id="{{item.id}}" bindtap="SwitchToProjectDetail"
+                class="cu-btn round sm lines-orange">进入</button>
+            </view>
+          </view>
+        </view>
       </view>
+
     </view>
-  </view>
-  <!-- 有项目时 -->
-  <view wx:else>
-    <view wx:for="{{projectList}}" wx:key="index" class="project-item flex solid-bottom">
-      <view class="flex-sub project-item-item  text-cut" style="width:25%;">
-        <view class="item-top flex justify-center align-end text-bold text-black">
-          {{item.date}}
-        </view>
-        <view class="item-under flex justify-center align-center text-grey text-xs">
-          开始 {{item.start}}
-        </view>
-      </view>
-      <view class="flex-twice project-item-item flex text-cut" style="width:50%;">
-        <view class="item-top flex text-left margin-left-xl align-end text-bold text-black">
-          {{item.name}}
-        </view>
-        <view class="item-under flex text-left margin-left-xl align-start text-grey text-xs">
-          {{item.place}}
-        </view>
-      </view>
-      <view class="flex-sub" style="width:25%;">
-        <view class="flex align-center justify-center" style="height:100%;">
-          <button data-id="{{item.id}}" bindtap="SwitchToProjectDetail" class="cu-btn round sm lines-orange">进入</button>
-        </view>
-      </view>
-    </view>
-  </view>
-</scroll-view>
+  </bd-scroll>
+</view>
 
 
 
@@ -57,7 +64,7 @@
 
 <view class="cu-modal bottom-modal {{showCreateProjectModal?'show':''}}" bindtap="HideCreateProjectModal">
   <view class="cu-dialog" style="height:{{scrollViewHeight*0.9}}rpx;" catchtap>
-    <view class="cu-bar bg-white flex justify-start" id="cu-bar-title">
+    <view class="cu-bar bg-white flex justify-center" id="cu-bar-title">
       <view class="action text-black text-bold">新的项目</view>
     </view>
     <view style="height:{{scrollViewHeight*0.9 - cuBarTitle}}rpx">
@@ -98,7 +105,7 @@
           </view>
           <view class="cu-form-group">
             <view class="title">预计时长</view>
-            <picker mode="time" value="{{projectForm.showDuration}}" start="00:00" end="10:00"
+            <picker mode="time" value="{{projectForm.showDuration}}" start="00:00" end="09:59"
               bindchange="DurationChange">
               <view class="picker">
                 {{duration.hour}}小时{{duration.minute}}分钟
@@ -120,10 +127,11 @@
           <view class="cu-form-group">
             <view class="title">海报</view>
             <view wx:if="{{projectForm.posterImageUrl===null}}">
-              <view  class="cu-avatar radius" bindtap="ChoosePosterImage"></view>
+              <text class="margin-right text-grey">建议长宽比  7:5</text>
+              <text class="margin-right text-orange" bindtap="ChoosePosterImage">选择海报</text>
             </view>
             <view wx:else>
-              <text class="margin-right text-grey" >{{posterImageSize}}</text>
+              <text class="margin-right text-grey">{{posterImageSize}}</text>
               <text class="margin-right text-grey" bindtap="RemovePosterImage">丢弃选择</text>
               <text class="margin-right text-orange" bindtap="ChoosePosterImage">重新选择</text>
               <image bindtap="PosterImageView" class="cu-avatar radius" src="{{projectForm.posterImageUrl}}"></image>
@@ -133,10 +141,10 @@
           <view class="cu-form-group">
             <view class="title">节目单</view>
             <view wx:if="{{projectForm.listImageUrl===null}}">
-              <view  class="cu-avatar radius" bindtap="ChooseListImage"></view>
+              <text class="margin-right text-orange" bindtap="ChooseListImage">选择节目单</text>
             </view>
             <view wx:else>
-              <text class="margin-right text-grey" >{{listImageSize}}</text>
+              <text class="margin-right text-grey">{{listImageSize}}</text>
               <text class="margin-right text-grey" bindtap="RemoveListImage">丢弃选择</text>
               <text class="margin-right text-orange" bindtap="ChooseListImage">重新选择</text>
               <image bindtap="ListImageView" class="cu-avatar radius" src="{{projectForm.listImageUrl}}"></image>
