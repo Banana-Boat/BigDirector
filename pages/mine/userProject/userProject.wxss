@@ -1,10 +1,9 @@
 /* pages/mine/userProject/userProject.wxss */
 
 #create-project-btn{
-  position: fixed;
-  bottom: 0;
+  position:fixed;
+  height: 200rpx;
   width: 100vw;
-  padding-bottom:20rpx;
 }
 
 .pro-empty-area{
@@ -43,6 +42,15 @@
 .project-item .project-item-item .item-under{
   height: 50%;
   width: 100%;
+}
+
+#create-project-btn-confirm{
+  position: fixed;
+  width: 100vw;
+}
+
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
 }
 
 
