@@ -22,7 +22,8 @@
         "bd-alert": "/components/alert/alert",
         "bd-loading": "/components/loading/loading",
         "bd-picker": "/components/picker/picker",
-        "bd-scroll": "/components/scroll/scroll"
+        "bd-scroll": "/components/scroll/scroll",
+        "bd-modal-popup":"/components/modal/popup/popup"
     },
     "tabBar": {
         "color": "#bfbfbf",

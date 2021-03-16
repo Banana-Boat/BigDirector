@@ -1,0 +1,13 @@
+
+<view class="cu-modal bottom-modal {{showPopupModal?'show':''}}" bindtap="HideModal">
+  <view class="cu-dialog" style="height:{{popupModalHeight}}rpx;" catchtap>
+    <view class="cu-bar bg-white flex justify-{{popupTitlePos}}" id="cu-bar-title">
+      <view class="action text-{{popupTitleColor}} text-bold" style="margin-left:0;">{{popupTitleText}}</view>
+    </view>
+    <scroll-view scroll-y style="height:{{popupModalHeight - curBarTitleHeight - confirmBtnHeight}}rpx">
+      <slot name="popupContent"></slot>
+    </scroll-view>
+  </view>
+</view>
+
+

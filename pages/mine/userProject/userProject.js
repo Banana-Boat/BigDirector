@@ -22,7 +22,6 @@ Page({
             }
           },
         projectConfirmBtnHeight: 0,
-        cuBarTitle: 0,
         projectList: [],
         datePicker: [],
         showCreateProjectModal: false,
@@ -374,6 +373,8 @@ Page({
         }, 300);
       },
 
+
+
     /**
      *  获取scroll-view高度
      *  */
@@ -382,22 +383,21 @@ Page({
         //获取projectbtn的高度
         new Promise(function (resolve, reject) {
             wx.createSelectorQuery().select("#create-project-btn").boundingClientRect(function (res) {
-                _this.setData({
-                    scrollViewHeight: PxToRpx(app.globalData.windowHeight - res.height)
-                })
+               resolve(res)
             }).exec()
-            //获取确认按钮的高度
+        }).then((res,err)=>{
+            _this.setData({
+                scrollViewHeight: PxToRpx(app.globalData.windowHeight - res.height)
+            })
+        })
+        new Promise(function (resolve, reject) {
             wx.createSelectorQuery().select("#create-project-btn-confirm").boundingClientRect(function (res) {
-                _this.setData({
-                    projectConfirmBtnHeight: PxToRpx(res.height)
-                })
+               resolve(res)
             }).exec()
-            //modal标题高度
-            wx.createSelectorQuery().select("#cu-bar-title").boundingClientRect(function (res) {
-                _this.setData({
-                    cuBarTitle: PxToRpx(res.height)
-                })
-            }).exec()
+        }).then((res,err)=>{
+            _this.setData({
+                projectConfirmBtnHeight: PxToRpx(res.height)
+            })
         })
     },
 
