@@ -1,4 +1,5 @@
 const app = getApp()
+import {PxToRpx, RpxToPx} from '../../../../../utils/util'
 
 Component({
     options: {
@@ -18,8 +19,51 @@ Component({
               shake:true
             }
         },
-        isShowDrawer: false,
-        isShowSelectModal: false,
+        isShowMemberModal: false,
+        isShowInviteModal: false,
+        leaderList: [
+            {
+                name: '香蕉船',
+                group: '导演组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '音控组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '音控组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '音控组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '音控组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '音控组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '灯光组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            },{
+                name: '香蕉船',
+                group: '道具组',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
+                phone: '19975269369'
+            }
+        ],
         projInfo: {
             url: '/static/img/poster1.jpg',
             shortName: '20不惑',
@@ -56,7 +100,7 @@ Component({
         ready() {
             this.setData({
                 scrollViewHeight: app.globalData.screenHeight - app.globalData.tarbarHeight - app.globalData.customBar - 50,
-                customBarHeight: app.globalData.customBar
+                modalScrollViewHeight: PxToRpx(app.globalData.screenHeight) * 0.6
             })
         }   
     },
@@ -74,11 +118,13 @@ Component({
             }, 300);
         },
         ShowMemberList() {
-
+            this.setData({
+                isShowMemberModal: true
+            })
         },
         AddBtnTap() {
             this.setData({
-                isShowSelectModal: true
+                isShowInviteModal: true
             })
         },
         StaffBtnTap() {

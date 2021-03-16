@@ -10,7 +10,7 @@
       {{item.name}}
     </view>
     <view class="cu-item" bindtap='AddGroupBtnTap'>
-        <text class="cuIcon-add text-orange" style="font-size:48rpx"></text>
+        <text class="cuIcon-add text-orange" style="font-size:48rpx" bindtap="AddGroupBtnTap"></text>
     </view>
   </scroll-view>
   <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{scrollViewHeight}}px;" scroll-into-view="main-{{mainCur}}" bindscroll="VerticalMain">
@@ -20,7 +20,7 @@
           <text class='cuIcon-title text-orange'></text>
           <text class="text-lg">{{item.name}}</text>
         </view>
-        <text class="cuIcon-add text-orange margin-right-sm" style="font-size:48rpx"></text>
+        <text class="cuIcon-add text-orange margin-right-sm" style="font-size:48rpx" bindtap="AddMemberBtnTap"></text>
       </view>
       <view class="cu-list menu-avatar">
         <view class="cu-item" wx:for="{{item.memberList}}">
@@ -35,7 +35,24 @@
           </view>
         </view>
       </view>
-
     </view>
   </scroll-view>
 </view>
+
+<bd-modal-popup showPopupModal="{{isShowMemberModal}}" popupModalHeight="{{modalScrollViewHeight}}"
+  popupTitleText="选择{{}}的成员" confirmBtnHeight="{{confirmBtnHeight}}">
+    <view slot="popupContent" class="bg-white">
+        <view class="cu-list menu-avatar">
+            <view class="flex align-center justify-between padding-lr-lg" style="height: 140rpx;"  wx:for="{{memberList}}">
+                <view class="flex align-center">
+                    <view class="cu-avatar round lg margin-lr-sm" style="background-image:url({{item.avatar}});"></view>
+                    <text class="text-cut text-lg">{{item.name}}</text>
+                </view>
+                <view><checkbox class="orange"></checkbox></view>
+            </view>
+        </view>
+        <view class="flex justify-center margin-top-xs" id="selectBtnView">
+            <button style="width:90vw" class="select-btn cu-btn bg-mine-bgcolor margin-tb-sm lg">选好了（{{}}）</button>
+        </view>
+    </view>
+</bd-modal-popup>

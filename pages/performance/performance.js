@@ -270,7 +270,7 @@ Page({
     /* 抢票页面跳转 */
     GrabTicket() {
       wx.navigateTo({
-        url: '/pages/mine/userProject/projectDetail/projectDetail',
+        url: '/pages/mine/userProject/projectDetail/controlPanel/staff/staff',
       })
     },
     /* 通过页面伪类提前确定自定义tarbar的高度 */

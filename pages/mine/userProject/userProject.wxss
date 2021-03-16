@@ -2,8 +2,9 @@
 
 #create-project-btn{
   position:fixed;
-  height: 200rpx;
   width: 100vw;
+  bottom: 0;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
 }
 
 .pro-empty-area{
@@ -46,6 +47,8 @@
 
 #create-project-btn-confirm{
   position: fixed;
+  bottom: 0;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
   width: 100vw;
 }
 

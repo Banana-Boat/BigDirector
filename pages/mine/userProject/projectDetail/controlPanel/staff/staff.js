@@ -1,9 +1,30 @@
 const app = getApp()
+import {PxToRpx, RpxToPx} from '../../../../../../utils/util'
+
 Page({
     data: {
         tabCur: 0,
         mainCur: 0,
         verticalNavTop: 0,
+        isShowMemberModal: false,
+        memberList: [
+            {
+                name: '香蕉船',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg'
+            },{
+                name: '香蕉船',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg'
+            },{
+                name: '香蕉船',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg'
+            },{
+                name: '香蕉船',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg'
+            },{
+                name: '香蕉船',
+                avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg'
+            }
+        ],
         groupList: [
             {
                 id: 0,
@@ -87,9 +108,20 @@ Page({
         })
     },
     onReady() {
+        let that = this
         this.setData({
-            scrollViewHeight: app.globalData.screenHeight - app.globalData.customBar - 30
+            scrollViewHeight: app.globalData.screenHeight - app.globalData.customBar - 30,
+            modalScrollViewHeight: PxToRpx(app.globalData.screenHeight) * 0.75
         })
+        wx.createSelectorQuery().select("#selectBtnView").boundingClientRect(res => {
+            that.setData({confirmBtnHeight: PxToRpx(res.height)})
+        }).exec()
+    },
+    AddMemberBtnTap() {
+        this.setData({isShowMemberModal: true})
+    },
+    AddGroupBtnTap() {
+
     },
     TabSelect(e) {
         this.setData({

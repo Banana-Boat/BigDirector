@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/performance/performance",
         "pages/mine/userProject/projectDetail/projectDetail",
         "pages/mine/userProject/projectDetail/controlPanel/staff/staff",
-        "pages/performance/performance",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userProject/userProject",
         "pages/mine/mine",
@@ -25,7 +25,7 @@
         "bd-picker": "/components/picker/picker",
         "bd-scroll": "/components/scroll/scroll",
         "bd-centralModal": "/components/modal/centralModal/centralModal",
-        "bd-drawer": "/components/drawer/drawer"
+        "bd-modal-popup":"/components/modal/popup/popup"
     },
     "tabBar": {
         "color": "#bfbfbf",

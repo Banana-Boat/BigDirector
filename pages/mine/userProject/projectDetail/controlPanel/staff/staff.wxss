@@ -45,3 +45,10 @@
 .VerticalMain{
     background-color: #f1f1f1;
 }
+
+#selectBtnView{
+    position: fixed;
+    bottom: 0;
+    padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+    width: 100vw;
+}

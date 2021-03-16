@@ -20,8 +20,8 @@
 			indicator-style="height:40px;{{indicatorStyle}}"
 			mask-style="{{maskStyle}}"
 		>
-			<picker-view-column wx:for="{{columnsData}}" wx:key="{{index}}">
-				<view wx:for="{{item}}" wx:for-item="itemIn" class="picker-line" wx:key="{{index}}">
+			<picker-view-column wx:for="{{columnsData}}" wx:key="index">
+				<view wx:for="{{item}}" wx:for-item="itemIn" class="picker-line" wx:key="index">
 					<text class="line1" style="{{chooseItemTextStyle}}">{{isUseKeywordOfShow?itemIn[keyWordsOfShow]:itemIn}}</text>
 				</view>
 			</picker-view-column>

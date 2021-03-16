@@ -1,6 +1,7 @@
 //app.js
 import {
-  GetOpenId
+  GetOpenId,
+  GetUserInfo
 } from './apis/userApi'
 
 
@@ -36,61 +37,28 @@ App({
      * 将openId存到globalData中
      */
 
-     this.SaveUserOpenId(that)
+    GetOpenId().then((res) => {
+      if (res.data.error === 0) {
+        const openId = res.data.data.openid
+        that.globalData.openId = openId
+        if (openId != null) {
+            GetUserInfo(openId).then((res) => {
+            if (res.data.error === 0) {
+              //用户存在
+              that.globalData.isUserLogin = true
+              that.globalData.userInfo = res.data.data;
+            }
+          }, (err) => {
+            console.log(err)
+          })
+        }
 
-     const openId = that.globalData.openId
-
-     /*如果openid不是null
-     就通过openid获取userInfo
-     */
-
-     if(openId!=null){
-       
-     }
-
-
-    
-  },
-
-
-  /**
-   * mengxun
-   * 获取openid
-   * */
-
-  // that.globalData.openId = that.$methods.getUserOpenId()
-
-  /**
-   * mengxun
-   * 获取openid
-   */
-  SaveUserOpenId(that) {
-     GetOpenId().then(function(openId){
-       that.globalData.openId = openId
-     });
-  },
-
-  /**
-   * mengxun
-   * 调用checkUserExist判断用户是否存在
-   * 如果存在，调用getDataBaseUserInfo(openId)函数，
-   * 反之，置为false ,isUserLogin = false 
-   */
-  CheckUserExist(openId) {
-    return false
-  },
-
-  /**
-   * mengxun
-   * 获取数据库用户信息，将结果存在globalData的userInfo中,
-   * isUserLogin = true
-   */
-  GetDataBaseUserInfo(openId) {
+      }
+    }, (err) => {
+      console.log(err)
+    })
 
   },
-
-
-
 
 
   globalData: {
