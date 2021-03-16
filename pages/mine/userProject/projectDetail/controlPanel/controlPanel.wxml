@@ -1,56 +1,70 @@
-<view class="poster-view flex flex-direction align-center bg-white padding-sm margin-sm radius">
-    <image src="{{projInfo.url}}" mode="aspectFit" class="shadow-blur poster-img margin-bottom-sm"></image>
-    <view class="name-text flex flex-direction justify-center">
-        <text class="text-lg text-black text-bold">{{projInfo.name}}</text>
-    </view>
-</view>
-<view class="member-view flex bg-white padding-tb-sm padding-left-lg margin-sm radius">
-    <view class="member-left-view flex flex-direction">
-        <view class="flex flex-direction">
-            <text class="member-title text-black text-lg margin-left-sm">导演<text>（{{projInfo.directorNum}}）</text></text>
-            <scroll-view class="avatar-view" scroll-x="true">
-                <view class="cu-avatar-group">
-                    <view class="avatar-img cu-avatar round" wx:for="{{projInfo.directorAvatarList}}" wx:key="index" style="background-image:url('{{item}}');"></view>
+<bd-scroll id="bd-scroll"  scrollOption="{{scroll}}" bindrefresh="Refresh">
+    <view slot="inner">
+        <view class="poster-view flex flex-direction align-center bg-white padding-sm margin-sm radius">
+            <image src="{{projInfo.url}}" mode="aspectFit" class="shadow-blur poster-img margin-bottom-sm"></image>
+            <view class="name-text flex flex-direction justify-center">
+                <text class="text-lg text-black text-bold">{{projInfo.name}}</text>
+            </view>
+        </view>
+        <view class="member-view flex bg-white padding-tb-sm padding-left-lg margin-sm radius">
+            <view class="member-left-view flex flex-direction" bindtap="ShowMemberList">
+                <view class="flex flex-direction">
+                    <text class="member-title text-black text-lg margin-left-sm">导演<text>（{{projInfo.directorNum}}）</text></text>
+                    <scroll-view class="avatar-view" scroll-x="true">
+                        <view class="cu-avatar-group">
+                            <view class="avatar-img cu-avatar round" wx:for="{{projInfo.directorAvatarList}}" wx:key="index" style="background-image:url('{{item}}');"></view>
+                        </view>
+                    </scroll-view>
                 </view>
-            </scroll-view>
-        </view>
-        <view class="seperator solids-bottom margin-tb-sm"></view>
-        <view class="flex flex-direction">
-            <text class="member-title text-black text-lg margin-left-sm">成员<text>（{{projInfo.memberNum}}）</text></text>
-            <scroll-view class="avatar-view" scroll-x="true">
-                <view class="cu-avatar-group">
-                    <view class="avatar-img cu-avatar round" wx:for="{{projInfo.memberAvatarList}}" wx:key="index" style="background-image:url('{{item}}');"></view>
+                <view class="seperator solids-bottom margin-tb-sm"></view>
+                <view class="flex flex-direction">
+                    <text class="member-title text-black text-lg margin-left-sm">成员<text>（{{projInfo.memberNum}}）</text></text>
+                    <scroll-view class="avatar-view" scroll-x="true">
+                        <view class="cu-avatar-group">
+                            <view class="avatar-img cu-avatar round" wx:for="{{projInfo.memberAvatarList}}" wx:key="index" style="background-image:url('{{item}}');"></view>
+                        </view>
+                    </scroll-view>
                 </view>
-            </scroll-view>
+            </view>
+            <view class="member-right-view flex align-center justify-center">
+                <text class="member-icon cuIcon-add text-orange" bindtap="AddBtnTap"></text>
+            </view>
+        </view>
+        <view class=" others-view margin-sm padding-lg grid col-4 bg-white radius">
+            <view class="flex flex-direction align-center margin-bottom-sm" bindtap="StaffBtnTap">
+                <view class="square-view flex align-center justify-center bg-gradual-orange">
+                    <text class="others-icon cuIcon-peoplefill"></text>
+                </view>
+                <text class="button-title margin-top-xs text-black text-sm">人员管理</text>
+            </view>
+            <view class="flex flex-direction align-center">
+                <view class="square-view flex align-center justify-center bg-gradual-blue">
+                    <text class="others-icon cuIcon-peoplefill"></text>
+                </view>
+                <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
+            </view>
+            <view class="flex flex-direction align-center">
+                <view class="square-view flex align-center justify-center bg-gradual-blue">
+                    <text class="others-icon cuIcon-peoplefill"></text>
+                </view>
+                <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
+            </view>
+            <view class="flex flex-direction align-center">
+                <view class="square-view flex align-center justify-center bg-gradual-blue">
+                    <text class="others-icon cuIcon-peoplefill"></text>
+                </view>
+                <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
+            </view>
         </view>
     </view>
-    <view class="member-right-view flex align-center justify-center">
-        <text class="member-icon cuIcon-add text-orange"></text>
+</bd-scroll>
+
+
+<bd-centralModal isShowModal="{{isShowSelectModal}}" modalWidth="70vw" radius="20rpx"  title="邀请新成员">
+    <view slot="content" class="flex flex-direction jusity-center bg-white padding-sm solids-top" >
+        <image src="/static/img/qrcode.jpg" mode="aspectFit"></image>
     </view>
-</view>
-<view class=" others-view margin-sm padding-lg grid col-4 bg-white radius">
-    <view class="flex flex-direction align-center margin-bottom-sm">
-        <view class="square-view flex align-center justify-center bg-gradual-orange">
-            <text class="others-icon cuIcon-peoplefill"></text>
-        </view>
-        <text class="button-title margin-top-xs text-black text-sm">人员管理</text>
+    <view slot="footer" class="flex justify-center align-center" style="width:100%;">
+        <button class="cu-btn bg-orange button-hover padding-lr-xxl margin-bottom-sm">发送邀请链接</button>
     </view>
-    <view class="flex flex-direction align-center">
-        <view class="square-view flex align-center justify-center bg-gradual-blue">
-            <text class="others-icon cuIcon-peoplefill"></text>
-        </view>
-        <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
-    </view>
-    <view class="flex flex-direction align-center">
-        <view class="square-view flex align-center justify-center bg-gradual-blue">
-            <text class="others-icon cuIcon-peoplefill"></text>
-        </view>
-        <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
-    </view>
-    <view class="flex flex-direction align-center">
-        <view class="square-view flex align-center justify-center bg-gradual-blue">
-            <text class="others-icon cuIcon-peoplefill"></text>
-        </view>
-        <text class="button-title margin-top-xs text-black text-sm">演出信息</text>
-    </view>
-</view>
+</bd-centralModal>

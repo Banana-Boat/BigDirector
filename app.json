@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/mine/userProject/projectDetail/projectDetail",
+        "pages/mine/userProject/projectDetail/controlPanel/staff/staff",
         "pages/performance/performance",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userProject/userProject",
@@ -22,7 +23,9 @@
         "bd-alert": "/components/alert/alert",
         "bd-loading": "/components/loading/loading",
         "bd-picker": "/components/picker/picker",
-        "bd-scroll": "/components/scroll/scroll"
+        "bd-scroll": "/components/scroll/scroll",
+        "bd-centralModal": "/components/modal/centralModal/centralModal",
+        "bd-drawer": "/components/drawer/drawer"
     },
     "tabBar": {
         "color": "#bfbfbf",
@@ -44,8 +47,8 @@
         ]
     },
     "permission": {
-      "scope.userLocation": {
-        "desc": "你的位置信息将用于所在大学的定位"
-      }
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于所在大学的定位"
+        }
     }
 }

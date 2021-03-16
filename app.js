@@ -17,6 +17,8 @@ App({
         // windowHeight不包括标题栏的高度！！
         that.globalData.windowHeight = e.windowHeight
         that.globalData.windowWidth = e.windowWidth
+        that.globalData.screenHeight = e.screenHeight
+        console.log(e.screenHeight)
         that.globalData.statusBar = e.statusBarHeight
         let capsule = wx.getMenuButtonBoundingClientRect()
         if (capsule) {
@@ -92,6 +94,7 @@ App({
 
 
   globalData: {
+    screenHeight: 0,
     windowHeight: 0,
     windowWidth: 0,
     statusBar: 0,

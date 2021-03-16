@@ -11,7 +11,7 @@
     <text class="cuIcon-right margin-right-sm"></text>
 </view>
 <view style="height:{{scrollViewHeight}}rpx;" class="main-content padding-0 shadow">
-    <bd-scroll id="bd-scroll"  scrollOption="{{scroll}}" bindrefresh="refresh">
+    <bd-scroll id="bd-scroll"  scrollOption="{{scroll}}" bindrefresh="Refresh">
         <view class="margin-top-sm" slot="inner">
             <view class="bg-white padding-lr-xs padding-bottom-sm">
                 <swiper class="card-swiper margin-tb-sm" current="{{perfIndex}}" circular="true" bindchange="SwiperItemChange">

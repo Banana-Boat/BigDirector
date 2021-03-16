@@ -1,2 +1,5 @@
-<!--pages/mine/userProject/project/ticket/ticket.wxml-->
-<text>pages/mine/userProject/project/ticket/ticket.wxml</text>
+<bd-scroll id="bd-scroll"  scrollOption="{{scroll}}" bindrefresh="Refresh">
+    <view slot="inner">
+        
+    </view>
+</bd-scroll>

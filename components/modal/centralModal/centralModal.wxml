@@ -1,0 +1,16 @@
+<view class="cu-modal {{isShowModal?'show':''}}" bindtap="HideModal">
+  <view class="cu-dialog" catchtap style="height:{{modalHeight}};width:{{modalWidth}};border-radius:{{radius}};">
+    <view wx:if="{{isShowHeader}}" class="cu-bar bg-white justify-end">
+      <view class="content">{{title}}</view>
+      <view class="action" bindtap="HideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view>
+        <slot name="content"></slot>
+    </view>
+    <view wx:if="{{isShowFooter}}" class="cu-bar bg-white">
+        <slot name="footer"></slot>
+    </view>
+  </view>
+</view>

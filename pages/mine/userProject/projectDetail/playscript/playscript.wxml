@@ -1,4 +1,5 @@
-<!--pages/mine/userProject/project/playscript/playscript.wxml-->
-<text>pages/mine/userProject/project/playscript/playscript.wxml</text>
-<scroll-view>
-</scroll-view>
+<bd-scroll id="bd-scroll"  scrollOption="{{scroll}}" bindrefresh="Refresh">
+    <view slot="inner">
+        
+    </view>
+</bd-scroll>

@@ -1,0 +1,41 @@
+<cu-custom isBack bgColor="bg-gradual-orange">
+    <view slot="content">
+        <view class="custom-bar text-white">人员管理</view>
+    </view>
+</cu-custom>
+
+<view class="VerticalBox padding-tb-sm">
+  <scroll-view class="VerticalNav nav padding-left-sm" scroll-y scroll-with-animation scroll-top="{{verticalNavTop}}" style="height:{{scrollViewHeight}}px;">
+    <view class="cu-item {{index==tabCur?'text-orange cur':''}}" wx:for="{{groupList}}" wx:key bindtap='TabSelect' data-id="{{index}}">
+      {{item.name}}
+    </view>
+    <view class="cu-item" bindtap='AddGroupBtnTap'>
+        <text class="cuIcon-add text-orange" style="font-size:48rpx"></text>
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{scrollViewHeight}}px;" scroll-into-view="main-{{mainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{groupList}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white justify-between'>
+        <view class='action'>
+          <text class='cuIcon-title text-orange'></text>
+          <text class="text-lg">{{item.name}}</text>
+        </view>
+        <text class="cuIcon-add text-orange margin-right-sm" style="font-size:48rpx"></text>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item" wx:for="{{item.memberList}}">
+          <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+          <view class="content flex flex-direction">
+            <text class="text-cut text-lg {{item.isLeader?'text-red':''}}"> 
+                <text wx:if="{{item.isLeader}}">★ </text>{{item.name}}
+            </text>
+          </view>
+          <view class="action">
+            <text class="cuIcon-phone text-green" style="font-size:55rpx"></text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

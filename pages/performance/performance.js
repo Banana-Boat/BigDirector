@@ -8,7 +8,7 @@ const app = getApp()
 Page({
     data: {
       isShowLoading: false,
-      scroll: {   // 
+      scroll: {
         refresh: {
           type: 'default',
           style: 'black',
@@ -94,20 +94,18 @@ Page({
       that.GetTarbarHeight().then(res => {
         app.globalData.tarbarHeight = res
         that.setData({
-          scrollViewHeight: PxToRpx(app.globalData.windowHeight - res) - 70
+          scrollViewHeight: PxToRpx(app.globalData.screenHeight - app.globalData.customBar - res) - 70
         })
       })
       // 通过大学名称请求列表
       that.GetLocation().then(() => {
-        console.log(that.data.university)
-        
         that.setData({isShowLoading: false})
       })
     },
     onReady: function () {
     },
     /* 下拉刷新事件 */
-    refresh: function () {
+    Refresh: function () {
       let that = this
       let scroll = that.data.scroll
       setTimeout(() => {
@@ -272,7 +270,7 @@ Page({
     /* 抢票页面跳转 */
     GrabTicket() {
       wx.navigateTo({
-        url: '/pages/performance/ticketOrder/ticketOrder',
+        url: '/pages/mine/userProject/projectDetail/projectDetail',
       })
     },
     /* 通过页面伪类提前确定自定义tarbar的高度 */
