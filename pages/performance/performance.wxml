@@ -66,3 +66,5 @@
     titleText="选择大学">
 </bd-picker>
 <view id="_tarbar" style="position: absolute;height:calc(100rpx + env(safe-area-inset-bottom));"></view>
+
+

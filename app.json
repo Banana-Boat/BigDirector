@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/mine/userProject/userProject",
         "pages/performance/performance",
         "pages/performance/ticketOrder/ticketOrder",
-        "pages/mine/userProject/userProject",
         "pages/mine/mine",
         "pages/mine/userProject/projectDetail/projectDetail",
         "pages/mine/userInfoEdit/userInfoEdit",
@@ -23,7 +23,8 @@
         "bd-loading": "/components/loading/loading",
         "bd-picker": "/components/picker/picker",
         "bd-scroll": "/components/scroll/scroll",
-        "bd-modal-popup":"/components/modal/popup/popup"
+        "bd-modal-popup":"/components/modal/popup/popup",
+        "bd-calendar":"/components/date/date"
     },
     "tabBar": {
         "color": "#bfbfbf",

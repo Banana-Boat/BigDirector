@@ -5,10 +5,14 @@ Component({
     multipleSlots:true,
     styleIsolation:'apply-shared'
   },
+
+
   /**
    * 组件的属性列表
    */
   properties: {
+
+
     /**
      * 是否显示弹窗
      */
@@ -16,6 +20,14 @@ Component({
       type:Boolean,
       value:false
     },
+    /**
+     * 弹窗z-index 默认1110
+     */
+    zIndex:{
+      type:Number,
+      value:1110
+    },
+
     /**
      * 弹窗的高度
      * 单位 rpx 

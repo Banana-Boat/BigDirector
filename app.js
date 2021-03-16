@@ -76,6 +76,7 @@ App({
     //查看用户是否登录(用户存在就登录，用户不存在就判定为没登录)
     isUserLogin: false,
     //用户信息
-    userInfo: null
+    userInfo: null,
+
   }
 })

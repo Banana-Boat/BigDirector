@@ -1,0 +1,24 @@
+<!--pages/date/date.wxml-->
+<view class="date">
+  <view class='date-content'>
+    <view class='date-item' wx:for="{{currentMonth}}" wx:for-item="item" wx:key="index">
+     
+      <view class='year-month'>
+        <text class="cuIcon-pullleft lg text-black" style="font-size:32rpx;margin-right:80rpx;"  bindtap="leftClick"></text>
+        <text class='month'>{{item.month}}月</text>
+        <text class='year'>/{{year}}</text>
+        <text class="cuIcon-pullright lg text-black"  style="font-size:32rpx;margin-left:80rpx;"  bindtap="rightClick"></text>
+      </view>
+      <view class='date-top flex'>
+    <view wx:for="{{weekL}}" wx:key="index" class="item {{index==0||index==6?'active':''}}">{{item}}</view>
+  </view>
+      <view class='day-list flex' style="padding-top:40rpx">
+        <view wx:for="{{item.blank}}" class='item' wx:key="index"></view>
+        <view wx:for="{{item.date}}" data-item="{{item}}" data-date="{{index}}" class="item {{item1.status==1||item1.day==6||item1.day==0?'status1':''}}" wx:key="index" wx:for-item="item1" bindtap="{{currentDate[0]==item.month&&currentDate[1]>item1.value?'':'onClick'}}">
+          <view class="day {{currentDate[0]==item.month&&currentDate[1]>item1.value?'old':currentDate[0]==item.month&&currentDate[1]==item1.value?'current':''}}">{{item1.value}}</view>
+          <view class="status {{currentDate[0]==item.month&&currentDate[1]>item1.value?'old':''}}">{{item1.status==1||item1.day==6||item1.day==0?'休':''}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
