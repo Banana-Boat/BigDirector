@@ -26,7 +26,7 @@
 
       <view wx:else>
         <view class="bg-white padding-sm solid-bottom" wx:for="{{projectList}}" wx:key="index">
-          <view  class="flex padding-tb-sm justify-around ">
+          <view  class="flex padding-tb-xs justify-around ">
             <view class="flex flex-direction justify-center" style="width:30%;">
               <text class="bold text-lg text-cut text-bold">{{item.date}}</text>
               <text class="text-gray">开始 {{item.start}}</text>

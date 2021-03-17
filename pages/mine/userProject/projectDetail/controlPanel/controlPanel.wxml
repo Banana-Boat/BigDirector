@@ -59,23 +59,6 @@
     </view>
 </bd-scroll>
 
-<bd-modal-popup showPopupModal="{{isShowMemberModal}}" popupModalHeight="{{modalScrollViewHeight}}"
-  popupTitleText="联系负责人">
-    <view slot="popupContent" class="solids-top bg-white">
-        <view class="cu-list menu-avatar">
-            <view class="flex align-center justify-between padding-lr-lg" style="height:140rpx;"  wx:for="{{leaderList}}">
-                <view class="flex align-center">
-                    <view class="cu-avatar round margin-right-sm" style="width:90rpx;height:90rpx;background-image:url({{item.avatar}});"></view>
-                    <text class="text-cut text-lg">{{item.group}} - {{item.name}}</text>
-                </view>
-                <view class="action">
-                    <text class="cuIcon-phone text-green" style="font-size:55rpx"></text>
-                </view>
-            </view>
-        </view>
-    </view>
-</bd-modal-popup>
-
 <bd-centralModal isShowModal="{{isShowInviteModal}}" modalWidth="70vw" radius="20rpx"  title="邀请新成员">
     <view slot="content" class="flex flex-direction jusity-center bg-white padding-sm solids-top" >
         <image src="/static/img/qrcode.jpg" mode="aspectFit"></image>

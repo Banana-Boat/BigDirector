@@ -19,7 +19,6 @@ Component({
               shake:true
             }
         },
-        isShowMemberModal: false,
         isShowInviteModal: false,
         leaderList: [
             {
@@ -118,8 +117,8 @@ Component({
             }, 300);
         },
         ShowMemberList() {
-            this.setData({
-                isShowMemberModal: true
+            wx.navigateTo({
+                url: '/pages/mine/userProject/projectDetail/controlPanel/staffOverview/staffOverview',
             })
         },
         AddBtnTap() {
@@ -129,7 +128,7 @@ Component({
         },
         StaffBtnTap() {
             wx.navigateTo({
-              url: '/pages/mine/userProject/projectDetail/controlPanel/staff/staff',
+              url: '/pages/mine/userProject/projectDetail/controlPanel/staffManage/staffManage',
             })
         }
     }
