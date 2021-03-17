@@ -25,27 +25,18 @@
       </view>
 
       <view wx:else>
-        <view wx:for="{{projectList}}" wx:key="index" class="project-item flex solid-bottom">
-          <view class="flex-sub project-item-item  text-cut" style="width:25%;">
-            <view class="item-top flex justify-center align-end text-bold text-black">
-              {{item.date}}
+        <view class="bg-white padding-sm solid-bottom" wx:for="{{projectList}}" wx:key="index">
+          <view  class="flex padding-tb-sm justify-around ">
+            <view class="flex flex-direction justify-center" style="width:30%;">
+              <text class="bold text-lg text-cut text-bold">{{item.date}}</text>
+              <text class="text-gray">开始 {{item.start}}</text>
             </view>
-            <view class="item-under flex justify-center align-center text-grey text-xs">
-              开始 {{item.start}}
+            <view class="flex flex-direction justify-center" style="width: 50%;">
+              <text class="bold text-lg text-cut text-bold">{{item.name}}</text>
+              <text class="text-gray">{{item.place===''||item.place===null?'地点未设置':item.place}}</text>
             </view>
-          </view>
-          <view class="flex-twice project-item-item flex text-cut" style="width:50%;">
-            <view class="item-top flex text-left margin-left-xl align-end text-bold text-black">
-              {{item.name}}
-            </view>
-            <view class="item-under flex text-left margin-left-xl align-start text-grey text-xs">
-              {{item.place}}
-            </view>
-          </view>
-          <view class="flex-sub" style="width:25%;">
-            <view class="flex align-center justify-center" style="height:100%;">
-              <button data-id="{{item.id}}" bindtap="SwitchToProjectDetail"
-                class="cu-btn round sm lines-orange">进入</button>
+            <view class="flex align-center justify-center">
+              <button class="cu-btn round line-orange" bindtap="SwitchToProjectDetail">进入</button>
             </view>
           </view>
         </view>
@@ -58,20 +49,15 @@
 
 
 <view class="flex justify-center" id="create-project-btn">
-  <button bindtap="ShowCreateProjectModal" style="width:90vw"
-    class="cu-btn bg-mine-bgcolor lg">创建项目</button>
+  <button bindtap="ShowCreateProjectModal" style="width:90vw" class="cu-btn bg-mine-bgcolor lg">创建项目</button>
 </view>
 
 
 <bd-modal-popup showPopupModal="{{showCalendarModal}}" popupModalHeight="{{scrollViewHeight*0.9*0.8}}"
-popupTitleText="选择日期" zIndex="1200">
+  popupTitleText="选择日期" zIndex="1200">
   <view slot="popupContent">
-    <bd-calendar id="bd-calendar"
-    bindChooseShowDate="ChooseShowDate"
-    year="{{dateYear}}"
-    start_month="{{dateMonth}}" 
-    end_month="{{dateMonth}}"
-    ></bd-calendar>
+    <bd-calendar id="bd-calendar" bindChooseShowDate="ChooseShowDate" year="{{dateYear}}" start_month="{{dateMonth}}"
+      end_month="{{dateMonth}}"></bd-calendar>
   </view>
 </bd-modal-popup>
 
@@ -104,7 +90,7 @@ popupTitleText="选择日期" zIndex="1200">
           <view class="date-picker-item" bindtap="ShowCalendarModal">
             {{projectForm.showDate}}
           </view>
-          
+
         </view>
         <view class="cu-form-group">
           <view class="title">开始时间</view>
@@ -131,8 +117,7 @@ popupTitleText="选择日期" zIndex="1200">
         </view>
         <view class="cu-form-group align-start">
           <view class="title">项目描述</view>
-          <textarea class="text-left" value="{{projectForm.introduce}}"
-            bindinput="InputIntroduceValue"></textarea>
+          <textarea class="text-left" value="{{projectForm.introduce}}" bindinput="InputIntroduceValue"></textarea>
         </view>
 
         <view class="cu-form-group">
@@ -164,7 +149,7 @@ popupTitleText="选择日期" zIndex="1200">
 
       </form>
     </view>
-    
+
   </view>
   <view slot="footer">
     <view class="flex justify-center" id="create-project-btn-confirm">
@@ -174,4 +159,5 @@ popupTitleText="选择日期" zIndex="1200">
 </bd-modal-popup>
 
 
-<bd-alert type="remind" title="提示" content="{{alertContent}}" showModal="{{showAlertModal}}" showCancelIcon="{{false}}"></bd-alert>
+<bd-alert type="remind" title="提示" content="{{alertContent}}" showModal="{{showAlertModal}}" showCancelIcon="{{false}}">
+</bd-alert>
