@@ -57,9 +57,9 @@
 
 
 
-<view class="flex padding  justify-center" id="create-project-btn">
+<view class="flex justify-center" id="create-project-btn">
   <button bindtap="ShowCreateProjectModal" style="width:90vw"
-    class="cu-btn bg-mine-bgcolor margin-tb-sm lg">创建项目</button>
+    class="cu-btn bg-mine-bgcolor lg">创建项目</button>
 </view>
 
 
@@ -164,8 +164,11 @@ popupTitleText="选择日期" zIndex="1200">
 
       </form>
     </view>
-    <view class="flex justify-center margin-top-xs" id="create-project-btn-confirm">
-      <button style="width:90vw" class="cu-btn bg-mine-bgcolor margin-tb-sm lg">确定</button>
+    
+  </view>
+  <view slot="footer">
+    <view class="flex justify-center" id="create-project-btn-confirm">
+      <button style="width:90vw" class="cu-btn bg-mine-bgcolor lg">确定</button>
     </view>
   </view>
 </bd-modal-popup>
