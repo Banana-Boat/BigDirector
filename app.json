@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/mine/userProject/userProject",
         "pages/performance/performance",
+        "pages/mine/userProject/userProject",
         "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/mine",
         "pages/mine/userProject/projectDetail/projectDetail",

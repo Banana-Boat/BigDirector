@@ -25,8 +25,6 @@ Page({
         projectList: [],
         dateMonth:'',
         dateYear:'',
-        showLeftBtn:false,
-        showRightBtn:true,
         showCreateProjectModal: false,
         showCalendarModal:false,
         duration: {
@@ -473,7 +471,7 @@ Page({
         var start = year.toString() + '-' + month.toString().padStart(2, "0") + '-' + day.toString().padStart(2, "0")
         _this.setData({
             "projectForm.showDate": start,
-            dateMonth:8,
+            dateMonth:month,
             dateYear:year
         })
     },

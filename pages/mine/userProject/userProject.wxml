@@ -71,8 +71,6 @@ popupTitleText="选择日期" zIndex="1200">
     year="{{dateYear}}"
     start_month="{{dateMonth}}" 
     end_month="{{dateMonth}}"
-    showLeftBtn="{{showLeftBtn}}"
-    showRightBtn="{{showRight}}"
     ></bd-calendar>
   </view>
 </bd-modal-popup>

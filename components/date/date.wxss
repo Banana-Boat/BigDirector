@@ -41,14 +41,17 @@
   padding: 50rpx 0;
 }
 
-.date .date-content .date-item .year-month .month {
+.date .date-content .date-item .year-month .date-title .month {
   color: #4d4d4d;
   font-size: 48rpx;
 }
 
-.date .date-content .date-item .year-month .year {
+.date .date-content .date-item .year-month .date-title .year {
   color: #aaa;
   font-size: 26rpx;
+}
+
+.date-title{
 }
 
 .date .date-content .date-item .day-list {

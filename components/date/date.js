@@ -9,17 +9,6 @@ Component({
   properties: {
     // 这里定义了innerText属性，属性值可以在组件使用时指定
 
-    showLeftBtn: {
-      type: Boolean,
-      value: true
-    },
-
-    showRightBtn: {
-      type: Boolean,
-      value: true
-    },
-
-
     year: {
       type: Number,
       value: new Date().getFullYear(),
@@ -56,12 +45,16 @@ Component({
     current: [],
     currentDate: [],
 
+    showLeftBtn:false,
+    showRightBtn:true
+
   },
   ready() {
     this.getMonthAround();
     this.setData({
-      // currentDate: this.data.current.split('-')
-      currentDate:[2029,1,2]
+      currentDate: this.data.current.split('-'),
+      shhowLeftBtn:false,
+      showRightBtn:true
     })
   },
 
@@ -167,46 +160,50 @@ Component({
       }
     },
     leftClick: function () {
+      // console.log(this.data)
      var nowMonth = new Date().getMonth() + 1
+      // nowMonth = 10
+     var tmpStartMonth = this.data.start_month
+     console.log(tmpStartMonth)
+     if(tmpStartMonth>nowMonth){
+       this.setData({
+       start_month:tmpStartMonth - 1,
+       end_month:tmpStartMonth - 1,
+       showLeftBtn:tmpStartMonth  === nowMonth + 1 ?false:true,
+       showRightBtn:true,
+       year:tmpStartMonth===13?this.data.year - 1:this.data.year
+     })
+     }
+     else{
+       this.setData({
+         showLeftBtn:false
+       })
+     }
+     
+    //  console.log(this.data.start_month,this.data.showLeftBtn,this.data.showRightBtn)
+
     },
     rightClick: function () {
-      var nowMonth = 8
-      if (nowMonth <= 6) {
-        if (this.data.start_month <= nowMonth + 6) {
-          this.setData({
-            start_month: this.data.start_month + 1,
-            end_month:this.data.start_month + 1,
-            showLeftBtn: true,
-            showRightBtn: this.data.start_month < nowMonth + 5 ? true : false
-          })
-        }
-      } else {
-        if (this.data.start_month < 12) {
-          this.setData({
-            start_month: this.data.start_month + 1,
-            end_month:this.data.start_month + 1,
-            showLeftBtn: true,
-            showRightBtn: true
-          })
-        }else if(this.data.start_month === 12){
-          this.setData({
-            start_month: 1,
-            end_month:1,
-            showLeftBtn: true,
-            showRightBtn: true
-          })
-        } else if (this.data.start_month <= nowMonth + 6 - 12) {
-          this.setData({
-            year:this.data.year + 1,
-            start_month: this.data.start_month + 1 - 12,
-            end_month:this.data.start_month + 1 - 12,
-            showLeftBtn: true,
-            showRightBtn: this.data.start_month < nowMonth + 6 ? true : false
-          })
-        }
-      }
+      // console.log(this.data)
+      var nowMonth = new Date().getMonth()+1
+      // nowMonth = 10
+      var tmpStartMonth = this.data.start_month
 
-      console.log(this.data)
+      if(tmpStartMonth<nowMonth+6){
+        this.setData({
+        start_month:tmpStartMonth+1,
+        end_month:tmpStartMonth+1,
+        showLeftBtn:true,
+        showRightBtn:tmpStartMonth===nowMonth+5?false:true,
+        year:tmpStartMonth==12?this.data.year+1:this.data.year
+      })
+    }
+      else{
+        this.setData({
+          showRightBtn:false
+        })
+      }
+      // console.log(this.data.start_month,this.data.showLeftBtn,this.data.showRightBtn)
     },
   }
 })

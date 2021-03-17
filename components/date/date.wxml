@@ -3,11 +3,17 @@
   <view class='date-content'>
     <view class='date-item' wx:for="{{currentMonth}}" wx:for-item="item" wx:key="index">
      
-      <view class='year-month'>
-        <text class="cuIcon-pullleft lg text-black" style="font-size:32rpx;margin-right:80rpx;"  bindtap="leftClick"></text>
+      <view class='year-month flex'>
+        <view class="flex-sub flex algin-center" bindtap="leftClick">
+        <text wx:if="{{showLeftBtn}}" class="cuIcon-pullleft lg text-black" style="font-size:32rpx;margin:auto;" ></text>
+      </view>
+        <view class="date-title flex-treble flex algin-center justify-center">
         <text class='month'>{{item.month}}月</text>
-        <text class='year'>/{{year}}</text>
-        <text class="cuIcon-pullright lg text-black"  style="font-size:32rpx;margin-left:80rpx;"  bindtap="rightClick"></text>
+        <text class='year'>{{year}}</text>
+       </view>
+       <view class="flex-sub flex algin-center"  bindtap="rightClick">
+        <text wx:if="{{showRightBtn}}" class="cuIcon-pullright lg text-black"  style="font-size:32rpx;margin:auto;"></text>
+      </view>
       </view>
       <view class='date-top flex'>
     <view wx:for="{{weekL}}" wx:key="index" class="item {{index==0||index==6?'active':''}}">{{item}}</view>
