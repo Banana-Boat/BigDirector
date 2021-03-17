@@ -5,6 +5,10 @@ Component({
     multipleSlots: true
   },
   properties: {
+    zIndex:{
+      type:Number,
+      value:2000
+    },
     /*
     弹窗的类型
     可选值：remind confirm

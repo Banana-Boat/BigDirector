@@ -98,7 +98,7 @@ Page({
                     openID: app.globalData.openId
                 }
 
-                UpdateUserInfo(userInfo).then((res) => {
+                UpdateUserInfo(app.globalData.openId,userInfo).then((res) => {
                     if (res.data.error === 0) {
                         app.globalData.isUserLogin = true
                         app.globalData.userInfo = userInfo

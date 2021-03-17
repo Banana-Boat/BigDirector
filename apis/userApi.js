@@ -1,5 +1,4 @@
-import {baseURL,jsonHeaders} from '../config/config'
-
+import {baseURL,jsonHeaders,jsonAuthorizationHeaders} from '../config/config'
 
 /**
  * mengxun
@@ -39,7 +38,7 @@ function GetUserInfo(openid){
     
     wx.request({
       url: baseURL + '/user/info?openID='+ openid,
-      header:jsonHeaders,
+      header:jsonAuthorizationHeaders(openid),
       method:'GET',
       success(res){
         resolve(res)
@@ -55,14 +54,14 @@ function GetUserInfo(openid){
  * 用户数据的更新
  */
 
-function UpdateUserInfo(userInfo){
+function UpdateUserInfo(openId,userInfo){
 
   return new Promise(function(resolve,reject){
 
     wx.request({
       url: baseURL + '/user/info',
       method:'PUT',
-      header:jsonHeaders,
+      header:jsonAuthorizationHeaders(openId),
       data:userInfo,
       success(res){
         resolve(res)
@@ -74,8 +73,31 @@ function UpdateUserInfo(userInfo){
   })
 }
 
+/**
+ * mengxun
+ * 获取用户的所有演出
+ */
+
+
+ function GetUsersAllPerformance(openId){
+   return new Promise((resolve,reject)=>{
+     wx.request({
+       url: baseURL +'/user/performances',
+       header: jsonAuthorizationHeaders(openId),
+       method:"GET",
+       success(res){
+         resolve(res)
+       },fail(err){
+         console.log(err)
+         reject("服务出错")
+       }
+     })
+   })
+ }
+
 module.exports = {
   GetOpenId,
   GetUserInfo,
-  UpdateUserInfo
+  UpdateUserInfo,
+  GetUsersAllPerformance
 }

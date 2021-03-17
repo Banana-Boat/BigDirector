@@ -1,5 +1,5 @@
 <!--components/alert/remind/remind.wxml-->
-<view class="cu-modal {{showModal?'show':''}}">
+<view class="cu-modal {{showModal?'show':''}}" style="z-index:{{zIndex}}">
   <view class="cu-dialog">
     <view class="min-h cu-bar bg-{{titleBgColor}} justify-end">
       <view class="content text-xl text-{{titleColor}}">{{title}}</view>

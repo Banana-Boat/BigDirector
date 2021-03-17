@@ -164,7 +164,7 @@ Component({
      var nowMonth = new Date().getMonth() + 1
       // nowMonth = 10
      var tmpStartMonth = this.data.start_month
-     console.log(tmpStartMonth)
+    //  console.log(tmpStartMonth)
      if(tmpStartMonth>nowMonth){
        this.setData({
        start_month:tmpStartMonth - 1,
