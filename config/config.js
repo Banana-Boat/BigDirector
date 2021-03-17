@@ -5,7 +5,16 @@ const jsonHeaders = {
   'sign':'spppk'
 }
 
+const jsonAuthorizationHeaders = (openId) =>{
+  return {
+    'Content-Type':'application/json',
+    'sign':'spppk',
+    'Authorization':"token "+openId
+  }
+}
+
 module.exports = {
   baseURL,
-  jsonHeaders
+  jsonHeaders,
+  jsonAuthorizationHeaders
 }

@@ -1,8 +1,14 @@
 // pages/mine/userProject/userProject.js
 const app = getApp()
 import {
-    PxToRpx
+    DateTimeToTimeStamp,
+    TimeStampToDateTime,
+    PxToRpx,
+    ArraySortByProperty
 } from '../../../utils/util'
+
+import {UpdatePerformanceInfo} from '../../../apis/performanceApi'
+import {GetUsersAllPerformance} from '../../../apis/userApi'
 
 Page({
 
@@ -21,6 +27,8 @@ Page({
               shake:true
             }
           },
+        showAlertModal:false,
+        alertContent:'',
         projectConfirmBtnHeight: 0,
         projectList: [],
         dateMonth:'',
@@ -56,262 +64,7 @@ Page({
         _this.GetScrollViewHeight()
         _this.GetNowDate()
         _this.GetNowTime()
-        _this.setData({
-            projectList: [{
-                id: 0,
-                url: '/static/img/poster1.jpg',
-                shortName: '20不惑',
-                name: '通信·经济学院主题迎新晚会',
-                during: '130分钟',
-                type: '迎新晚会',
-                date: '今天03月10日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss'
-            }, {
-                id: 1,
-                url: '/static/img/poster2.jpg',
-                shortName: '30而立',
-                name: '外国语学院主题迎新晚会',
-                during: '160分钟',
-                type: '迎新晚会',
-                date: '明天03月11日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 2,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 3,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 4,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 1,
-                url: '/static/img/poster2.jpg',
-                shortName: '30而立',
-                name: '外国语学院主题迎新晚会',
-                during: '160分钟',
-                type: '迎新晚会',
-                date: '明天03月11日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 2,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 3,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 4,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 1,
-                url: '/static/img/poster2.jpg',
-                shortName: '30而立',
-                name: '外国语学院主题迎新晚会',
-                during: '160分钟',
-                type: '迎新晚会',
-                date: '明天03月11日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 2,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 3,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 4,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 1,
-                url: '/static/img/poster2.jpg',
-                shortName: '30而立',
-                name: '外国语学院主题迎新晚会',
-                during: '160分钟',
-                type: '迎新晚会',
-                date: '明天03月11日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 2,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 3,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 4,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 1,
-                url: '/static/img/poster2.jpg',
-                shortName: '30而立',
-                name: '外国语学院主题迎新晚会',
-                during: '160分钟',
-                type: '迎新晚会',
-                date: '明天03月11日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 2,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 3,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }, {
-                id: 4,
-                url: '/static/img/poster1.jpg',
-                shortName: '50知天命',
-                name: '计算机学院主题迎新晚会',
-                during: '120分钟',
-                type: '迎新晚会',
-                date: '周五03月18日',
-                start: '18:00',
-                end: '20:40',
-                place: '学生活动中心剧院',
-                info: 'ssss'
-            }]
-        })
-
+        _this.GetAllPerformance()
     },
 
     /**
@@ -362,6 +115,83 @@ Page({
     onShareAppMessage: function () {
 
     },
+
+    /*
+    获取该用户所有的项目
+     */
+
+    GetAllPerformance:function(){
+        let _this = this
+        GetUsersAllPerformance(app.globalData.openId).then((res)=>{
+            if(res.data.error === 0){
+                var list = res.data.data
+                var tmpList = []
+                for(let i = 0;i<list.length;i++){
+                    var tmpListItem = {
+                        id:list[i].performanceID,
+                        name:list[i].name,
+                        date:TimeStampToDateTime(list[i].startTime).date,
+                        place:list[i].place,
+                        start:TimeStampToDateTime(list[i].startTime).time,
+                        sortStartTime:Number(list[i].startTime)
+                    }
+                    tmpList.push(tmpListItem)
+                }
+                _this.setData({
+                    projectList:tmpList.sort(ArraySortByProperty("sortStartTime",false))
+                })
+            }else{
+                _this.ShowAlertModal("获取用户项目出错")
+            }
+        },(err)=>{
+            _this.ShowAlertModal(err)
+        })
+    },
+
+    /**
+     * 新增项目
+     */
+
+     AddNewPerformance:function(){
+         //判断项目名称是否合法
+         let _this = this 
+         var projForm = _this.data.projectForm
+         
+         if(projForm.proName.length === 0||projForm.proName === null){
+             _this.ShowAlertModal("项目名称必填")
+             return;
+         }
+        //  对数据进行处理上交
+        var performanceInfo = {
+            performanceID:'',
+            duration: projForm.showDuration,
+            introduce: projForm.introduce,
+            listImage: projForm.listImageUrl,
+            name: projForm.proName,
+            place: projForm.showPlace,
+            posterImage:projForm.posterImageUrl, 
+            sponsor: projForm.sponsor,
+            startTime: DateTimeToTimeStamp(projForm.showDate + " " + projForm.startTime)
+          }
+
+        //   console.log(performanceInfo)
+        
+          UpdatePerformanceInfo(app.globalData.openId,performanceInfo).then((res)=>{
+              if(res.data.error === 0){
+                  _this.ShowAlertModal("您已成功创建项目")
+                  _this.HideCreateProjectModal()
+                  _this.onLoad()
+              }
+              else{
+                  _this.ShowAlertModal("创建项目失败")
+              }
+          },(err)=>{
+              _this.ShowAlertModal(err)
+          })
+
+     },
+
+
 
      /* 下拉刷新事件 */
      refresh: function () {
@@ -443,6 +273,17 @@ Page({
         this.setData({
             showCalendarModal:false
         })
+    },
+
+    /**
+     * 全局弹窗
+     */
+
+     ShowAlertModal:function(content){
+         this.setData({
+             showAlertModal:true,
+             alertContent:content
+         })
     },
 
 

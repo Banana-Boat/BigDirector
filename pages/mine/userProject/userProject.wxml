@@ -84,7 +84,7 @@ popupTitleText="选择日期" zIndex="1200">
     <view>
       <form>
         <view class="cu-form-group margin-top">
-          <view class="title">项目名称</view>
+          <view class="title">项目名称<text class="text-red">*</text></view>
           <input placeholder="必填" class="text-left" value="{{projectForm.proName}}"
             bindinput="InputProNameValue"></input>
         </view>
@@ -131,7 +131,7 @@ popupTitleText="选择日期" zIndex="1200">
         </view>
         <view class="cu-form-group align-start">
           <view class="title">项目描述</view>
-          <textarea placeholder="描述这场演出" class="text-left" value="{{projectForm.introduce}}"
+          <textarea class="text-left" value="{{projectForm.introduce}}"
             bindinput="InputIntroduceValue"></textarea>
         </view>
 
@@ -168,7 +168,10 @@ popupTitleText="选择日期" zIndex="1200">
   </view>
   <view slot="footer">
     <view class="flex justify-center" id="create-project-btn-confirm">
-      <button style="width:90vw" class="cu-btn bg-mine-bgcolor lg">确定</button>
+      <button style="width:90vw" class="cu-btn bg-mine-bgcolor lg" bindtap="AddNewPerformance">确定</button>
     </view>
   </view>
 </bd-modal-popup>
+
+
+<bd-alert type="remind" title="提示" content="{{alertContent}}" showModal="{{showAlertModal}}" showCancelIcon="{{false}}"></bd-alert>

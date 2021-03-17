@@ -124,6 +124,6 @@ Component({
       this.setData({
         showPopupModal:false
       })
-    }
+    },
   }
 })
