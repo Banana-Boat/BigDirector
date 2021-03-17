@@ -3,8 +3,8 @@
         "pages/performance/performance",
         "pages/mine/userProject/projectDetail/projectDetail",
         "pages/mine/userProject/projectDetail/controlPanel/staff/staff",
-        "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/userProject/userProject",
+        "pages/performance/ticketOrder/ticketOrder",
         "pages/mine/mine",
         "pages/mine/userInfoEdit/userInfoEdit",
         "pages/mine/userTicket/userTicket",
@@ -25,7 +25,8 @@
         "bd-picker": "/components/picker/picker",
         "bd-scroll": "/components/scroll/scroll",
         "bd-centralModal": "/components/modal/centralModal/centralModal",
-        "bd-modal-popup":"/components/modal/popup/popup"
+        "bd-modal-popup":"/components/modal/popup/popup",
+        "bd-calendar":"/components/date/date"
     },
     "tabBar": {
         "color": "#bfbfbf",

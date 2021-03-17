@@ -23,8 +23,10 @@ Page({
           },
         projectConfirmBtnHeight: 0,
         projectList: [],
-        datePicker: [],
+        dateMonth:'',
+        dateYear:'',
         showCreateProjectModal: false,
+        showCalendarModal:false,
         duration: {
             hour: 2,
             minute: 30
@@ -38,7 +40,7 @@ Page({
             showPlace: '',
             showDate: '',
             startTime: '',
-            showDuration: '',
+            showDuration: '02:30',
             sponsor: '',
             introduce: '',
             posterImageUrl: null,
@@ -427,6 +429,22 @@ Page({
             showCreateProjectModal: false
         })
     },
+    /**
+     * 
+     * 日历选择弹窗
+     */
+    ShowCalendarModal:function(){
+        this.setData({
+            showCalendarModal:true
+        })
+    },
+
+    HideCalendarModal:function(){
+        this.setData({
+            showCalendarModal:false
+        })
+    },
+
 
     /**
      * dataPicker组件的起始日期
@@ -441,7 +459,7 @@ Page({
     },
 
     /**
-     * datePicker初始数据
+     * date初始数据
      */
 
     GetNowDate: function () {
@@ -451,15 +469,10 @@ Page({
         var month = nowDate.getMonth() + 1;
         var day = nowDate.getDate();
         var start = year.toString() + '-' + month.toString().padStart(2, "0") + '-' + day.toString().padStart(2, "0")
-        var end = (year + 1).toString() + '-' + month.toString().padStart(2, "0") + '-' + day.toString().padStart(2, "0")
-        if (_this.IsRunYear(year)) {
-            if (month == 2 && day == 29) {
-                end = (year + 1).toString() + '-' + month.toString().padStart(2, "0") + '-' + (day - 1).toString().padStart(2, "0")
-            }
-        }
         _this.setData({
-            datePicker: [start, end],
-            "projectForm.showDate": start
+            "projectForm.showDate": start,
+            dateMonth:month,
+            dateYear:year
         })
     },
 
@@ -468,11 +481,16 @@ Page({
     /**
      * datePicker数据变化
      */
-    DateChange: function (e) {
+
+    ChooseShowDate:function(e){
+        // console.log(e.detail.date)
         this.setData({
-            "projectForm.showDate": e.detail.value
+            "projectForm.showDate": e.detail.date
         })
+        this.HideCalendarModal()
     },
+
+
 
     /**
      * startTime初始数据

@@ -1,0 +1,148 @@
+/* pages/date/date.wxss */
+
+.flex {
+  display: flex;
+}
+
+.date {
+  color: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.date-top {
+  background-color: #fbfbfb;
+  justify-content: space-around;
+  font-size: 28rpx;
+  left: 0;
+  width: 100%;
+  padding: 8rpx;
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+}
+
+.date-top .item {
+  width: 14%;
+  flex-grow: 1;
+  text-align: center;
+  color: #6f6f6f;
+}
+
+.date-top .item.active {
+  color: orange;
+}
+
+.date .date-content .date-item {
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.date .date-content .date-item .year-month {
+  text-align: center;
+  padding: 50rpx 0;
+}
+
+.date .date-content .date-item .year-month .date-title .month {
+  color: #4d4d4d;
+  font-size: 48rpx;
+}
+
+.date .date-content .date-item .year-month .date-title .year {
+  color: #aaa;
+  font-size: 26rpx;
+}
+
+.date-title{
+}
+
+.date .date-content .date-item .day-list {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.date .date-content .date-item .day-list .item {
+  font-size: 34rpx;
+  width: 14.285714285714286%;
+  color: #444;
+  text-align: center;
+  margin-bottom: 18rpx;
+}
+
+.date .date-content .date-item .day-list .item .day {
+  width: 42rpx;
+  margin: auto;
+  margin-bottom: 2rpx;
+  border-bottom: 4rpx solid #fff;
+}
+
+.date .date-content .date-item .day-list .item .day.current {
+  border-color: #dbdbdb;
+}
+
+.date .date-content .date-item .day-list .item.status1 .day {
+  color: orange;
+}
+
+
+.date .date-content .date-item .day-list .item .status {
+  width: 34rpx;
+  height: 34rpx;
+  text-align: center;
+  margin: auto;
+  font-size: 22rpx;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.date .date-content .date-item .day-list .item.status1 .status {
+  background-color:orange;
+}
+
+.date .date-content .date-item .day-list .item.status2 .status {
+  background-color: #ff5b61;
+}
+
+.date .date-content .date-item .day-list .item .day.old {
+  color: #cfcfcf;
+}
+
+.date .date-content .date-item .day-list .item.status1 .status.old,
+.date .date-content .date-item .day-list .item.status2 .status.old {
+  background-color: #cfcfcf;
+}
+
+.date .date-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 14rpx 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.date .date-bottom .status1 {
+  width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  font-size: 22rpx;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #30bf5f;
+  margin: 0 10rpx;
+}
+
+.date .date-bottom .status2 {
+  width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  font-size: 22rpx;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #ff5b61;
+  margin: 0 10rpx;
+  margin-left: 30rpx;
+}
+
+.date .date-bottom .text {
+  color: #6f6f6f;
+  font-size: 28rpx;
+}
