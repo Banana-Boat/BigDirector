@@ -60,12 +60,12 @@
 </bd-scroll>
 
 <bd-modal-popup showPopupModal="{{isShowMemberModal}}" popupModalHeight="{{modalScrollViewHeight}}"
-  popupTitleText="成员信息">
+  popupTitleText="联系负责人">
     <view slot="popupContent" class="solids-top bg-white">
         <view class="cu-list menu-avatar">
-            <view class="flex align-center justify-between padding-lr-lg" style="height: 140rpx;"  wx:for="{{leaderList}}">
+            <view class="flex align-center justify-between padding-lr-lg" style="height:140rpx;"  wx:for="{{leaderList}}">
                 <view class="flex align-center">
-                    <view class="cu-avatar round lg margin-right-sm" style="background-image:url({{item.avatar}});"></view>
+                    <view class="cu-avatar round margin-right-sm" style="width:90rpx;height:90rpx;background-image:url({{item.avatar}});"></view>
                     <text class="text-cut text-lg">{{item.group}} - {{item.name}}</text>
                 </view>
                 <view class="action">

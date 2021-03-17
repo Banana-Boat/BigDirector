@@ -20,7 +20,7 @@
           <text class='cuIcon-title text-orange'></text>
           <text class="text-lg">{{item.name}}</text>
         </view>
-        <text class="cuIcon-add text-orange margin-right-sm" style="font-size:48rpx" bindtap="AddMemberBtnTap"></text>
+        <text class="cuIcon-add text-orange margin-right-sm" style="font-size:48rpx" data-group="{{item.name}}" bindtap="AddMemberBtnTap"></text>
       </view>
       <view class="cu-list menu-avatar">
         <view class="cu-item" wx:for="{{item.memberList}}">
@@ -40,19 +40,21 @@
 </view>
 
 <bd-modal-popup showPopupModal="{{isShowMemberModal}}" popupModalHeight="{{modalScrollViewHeight}}"
-  popupTitleText="选择{{}}的成员" confirmBtnHeight="{{confirmBtnHeight}}">
+  popupTitleText="选择添加到{{groupToAdd}}的成员" confirmBtnHeight="{{confirmBtnHeight}}">
     <view slot="popupContent" class="bg-white">
         <view class="cu-list menu-avatar">
-            <view class="flex align-center justify-between padding-lr-lg" style="height: 140rpx;"  wx:for="{{memberList}}">
+          <checkbox-group bindchange="CheckboxChange">
+            <view class="flex align-center justify-between padding-lr-lg" style="height:120rpx;" wx:for="{{memberList}}" wx:key="item.name">
                 <view class="flex align-center">
-                    <view class="cu-avatar round lg margin-lr-sm" style="background-image:url({{item.avatar}});"></view>
+                    <view class="cu-avatar round margin-lr-sm" style="width:90rpx;height:90rpx;background-image:url({{item.avatar}});"></view>
                     <text class="text-cut text-lg">{{item.name}}</text>
                 </view>
-                <view><checkbox class="orange"></checkbox></view>
+                <view><checkbox value="{{item.name}}" checked="{{item.checked}}" class="orange" style="zoom=0.85;"></checkbox></view>
             </view>
+          </checkbox-group>
         </view>
         <view class="flex justify-center margin-top-xs" id="selectBtnView">
-            <button style="width:90vw" class="select-btn cu-btn bg-mine-bgcolor margin-tb-sm lg">选好了（{{}}）</button>
+            <button style="width:90vw" class="select-btn cu-btn bg-mine-bgcolor margin-tb-sm lg">选好了（{{memberSelectedNum}}）</button>
         </view>
     </view>
 </bd-modal-popup>

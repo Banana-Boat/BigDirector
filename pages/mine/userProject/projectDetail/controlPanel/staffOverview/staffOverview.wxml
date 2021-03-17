@@ -1,0 +1,53 @@
+<cu-custom isBack bgColor="bg-gradual-orange">
+    <view slot="content">
+        <view class="custom-bar text-white">人员总览</view>
+    </view>
+</cu-custom>
+<view class="cu-bar bg-white search fixed" style="top:{{customBar}}px;">
+    <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="输入搜索的关键词" confirm-type="search" bindinput="SearchBarInput"></input>
+    </view>
+</view>
+<scroll-view wx:if="{{!isSearching}}" scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}"
+    style="height:calc(100vh - {{customBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+    <block wx:for="{{letterList}}" wx:key="index">
+        <view class="padding indexItem-{{item}}" id="indexes-{{item}}" data-index="{{item}}">
+            {{item=='0'?'#':item}}</view>
+        <view class="cu-list menu-avatar no-padding">
+            <view class="flex justify-between align-center bg-white padding-right-lg padding-left-sm" wx:for="{{staffMap[item]}}" wx:for-item="staff" wx:key="index" wx:for-index="sub" style="height:140rpx;">
+                <view class="flex align-center justify-center">
+                    <view class="cu-avatar round lg margin-lr-lg" style="background-image:url({{staff.avatar}});"></view>
+                    <text class="text-cut text-lg">{{staff.name}}</text>
+                </view>
+                <view class="action margin-right-xl">
+                    <text class="cuIcon-phone text-green" style="font-size:60rpx" bindtap="CallBtnTap" data-phone="{{staff.phone}}"></text>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<scroll-view wx:else scroll-y style="height:calc(100vh - {{customBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+    <view class="cu-list menu-avatar no-padding">
+        <view class="flex justify-between align-center bg-white padding-right-lg padding-left-sm" wx:for="{{searchResList}}" wx:key="index" style="height:140rpx;">
+            <view class="flex align-center justify-center">
+                <view class="cu-avatar round lg margin-lr-lg" style="background-image:url({{item.avatar}});"></view>
+                <text class="text-cut text-lg">{{item.name}}</text>
+            </view>
+            <view class="action margin-right-xl">
+                <text class="cuIcon-phone text-green" style="font-size:60rpx" bindtap="CallBtnTap" data-phone="{{item.phone}}"></text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view wx:if="{{!isSearching}}" class="indexBar" style="height:calc(100vh - {{customBar}}px - 50px)">
+    <view class="indexBar-box" bindtouchstart="TStart" bindtouchend="TEnd" catchtouchmove="TMove">
+        <view class="indexBar-item" wx:for="{{letterList}}" wx:key="index" id="{{index}}" bindtouchstart="GetCur"
+            bindtouchend="SetCur">{{item=='0'?'#':item}}</view>
+    </view>
+</view>
+
+<!--选择显示-->
+<view hidden="{{hidden}}" class="indexToast">
+    {{listCur}}
+</view>
